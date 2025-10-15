@@ -45,13 +45,20 @@ nav a:first-child {
 
 /* 4. Hero Section Styling */
 #hero {
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 40px;
+    background-color: #e8f5e9;
+    padding: 50px 0;
+    text-align: left; /* Keep text aligned to left fore hero-content */
+    display: flex; /* Makes hero-content and hero image sit side-by-side */
+    align-items: center; /* Verticaly centers content within the hero section */
+    justify-content: center; /* Centers the flex items horizontally */
+    gap: 40px; /* Space between the text/button and the image */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line on smaller screens */
+    padding-left: 10%; /* Adjust padding for better content placement */
+    padding-right: 10%;
 }
 
 #hero h1 {
-    font-size: 48px;
+    font-size: 38px;
     color: #004d40; /* Matchiing the header color */
     margin-bottom: 15px;
 }
@@ -66,13 +73,56 @@ nav a:first-child {
     background-color: #00796b; /* A slightly brighter teal for the button */
     color: white;
     padding: 15px 30px;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px; 
     font-weight: bold;
     transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
+
+
+
+/* Adjust text/button content width */
+.hero-content {
+    flex: 1.5; /* Allows this content to grow and shrink */
+    min-width: 300px; /* Ensures it doesn't get too small */
+    max-width: 600px; /* Prevents it from getting too wide on large screens */
+    text-align: left; /* Ensure text is left aligned within its div */
+}
+
+/* Style for the image container and the image itself */
+.hero-image {
+    flex: 0.5; /* Allows the image to grow and shrink */
+    min-width: 250px; /* Ensures it doesn't get too small */
+    max-width: 400px; /* Max Width for the image */
+    display: flex; /* Use flex to center image if it is smaller */
+    justify-content: center; /* Center image withing its container */
+}
+
+.hero-image img {
+    max-width: 100%; /* ensure image doesn't overflow its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Consistent rounder corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Madia query for smaller screens: stack items vertically */
+@media (max-width: 768px) {
+    #hero {
+        flex-direction: column; /* Stack content and image vertically */
+        text-align: center; /* Center text when stacked */
+        padding-left: 5%; /* Adjust padding for smaller screens */
+        padding-right: 5%;
+    }
+
+
+.hero-content {
+    text-align: center; /* Center text within its div when stacked */
+    margin-bottom: 30px; /* Add space between text and image */
+    }
+
+}
+
 
 /*New Hover effect for the button */
 #hero button:hover {
@@ -100,6 +150,35 @@ footer {
     padding: 20px 0;
     margin-top: 50px;
 }
+
+/* OPTIONAL: Ensure the links are displayed in a block above the copyright */
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px; /* Space between links */
+    font-weight: normal;
+    display: inline-block; /* Allows margins to work horizontally */
+    padding: 5px 0 10px 0; /* Creates space between links and copyright */
+}
+
+.footer-nav {
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    max-width: 600px; /*Limits the width of the link block to ensure centering */
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 10px; /* Space above the copyright text */
+    font-size: 14px;
+    opacity: 0.8; /* Slightly grayed out for minor text */
+}
+
 
 /* 7. Doctor Profile Styling */
 .doctor-profile p{
@@ -134,9 +213,12 @@ footer {
 .service-list {
     display: grid; 
     /* Set up a responsive grid: 2 columns if screen is wide, otherwise 1 column */
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px; /*Adds space between the cards*/
     margin-top: 30px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Styles the individual cards */
@@ -146,7 +228,25 @@ footer {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgva(0, 0, 0, 0.08); /* More noticeable shadow for a "card" feel */
     transition: transform 0.3s, box-shadow 0.3s; /*Smooth transition for hover */
+
+    /*Layout for Icon/Text */
+    display: flex;
+    flex-direction: column; /* Stacks image, title, and text */
+    align-items: center; /* **Centers the items horizontally in the card** */
+    text-align: center;
+    padding: 30px;
 }
+
+/* Style fo the samll image/icon inside the card */
+.card-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border-radius: 50%; /* **Makes the icons round for a clean look** */
+    border: 2px solid #004d40; /* Optional: adds a slighter border */
+}
+
 
 /* Add a subtle interactive touch (optional, but professional) */
 .service-card:hover{
@@ -182,25 +282,33 @@ footer {
 
 /* 9. Contact Page Specific Styling */
 
-/* Use Flexbox to put the Service Area nad Hours side-by-side on larger screens */
+/* Use Flexbox to put the Service Area and Hours side-by-side on larger screens */
 .contact-info {
-    display: flex;
-    gap: 40px; /* Space between the two blocks */
-    margin-top: 20px;
-    /* Ensure wrapping for smaller mobile screens */
-    flex-wrap: wrap;
+    display: flex; 
+    flex-wrap: wrap; /* Allows cards to wrap on smaler screens */
+    justify-content: space-between; /* Centers cards if there is extra space */
+    gap: 30px; /* Space between the two blocks */
+    margin-top: 30px;
+    max-width: 1100px; /* Restricts overall width of the card section */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Add osme horizontal padding */
 }
 
-.info-block {
-    /* Each block takes up half the space, minus the gap */
-    flex: 1;
-    padding: 20px 30px;
-    background-color: white; /* Give the info a white background */
+.info-card {
+    background-color: white;
+    padding: 30px;
     border-radius: 8px; /* Slightly rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Very subtle shadow for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Very subtle shadow for depth */
+    flex: 1 1 45%; /* Takes up 45% of the space, allowing 5% for the gap */
+    min-width: 280px; /* Minimum width before wrapping */
+    max-width: 500; /* Max Width for each card */
+    text-align: left; /* Keep text aligned left withing card */
+    
+    
 }
 
-.info-block h3 {
+.info-card h3 {
     color: #004d40;
     font-size: 20px;
     margin-bottom: 10px;
@@ -353,5 +461,99 @@ footer {
 .modal-content label span {
     font-weight: normal;
     color: #555;
+}
+
+/* 16. Styling for Bio Highlight */
+.highlight-text {
+    font-style: italic;
+    background-color: #e8f5e9; /* Light green background */
+    padding: 15px;
+    border-left: 4px solid #00796b; /* Teal accent bar */
+    margin: 25px 0;
+    line-height: 1.6;
+}
+
+
+/* 18. New Service Page Hero Adjustments */
+.service-hero-title {
+    font-size: 38px; /* Slightly smaller than the <h1> on the homepage */
+    color: #004d40;
+    margin-bottom: 10px; 
+}
+
+.service-hero-subtitle {
+    font-size: 18px;
+    margin-bottom: 30px; /* Space between text and button */
+}
+
+/* Reduce the padding on the main #hero container on this page */
+#hero {
+    max-width: 1100px;
+    margin: 30px auto; /* Reduced vertical margin */
+    padding: 20px 20px; /* Reduced vertical padding */
+    text-align: center;
+}
+
+.service-grid-wrapper {
+    margin-top: 50px; /* Separates the grid from the button */
+}
+
+.service-grid-wrapper h2 {
+    font-size: 32px;
+    color: #004d40;
+    margin-bottom: 10px;
+}
+
+
+/* 19 Styling for Service Area Map on Contact Page */
+.service-area-map {
+    max-width: 100%; /* Ensures the image does not overflow the card */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px; /* Matches card border-radius */
+    margin-bottom: 15px; /* Adds space below the image */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* 20 Sytling for Office Hours */
+.hours-list {
+    list-style: none; /* Removes default bullet points */
+    padding-left: 0;
+    margin: 10px 0 15px 0;
+}
+
+.hours-list {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+
+/* 21 Sytling for Side-by-Side action buttons */
+.action-buttons {
+    display: flex;  /* Alings items horizontally */
+    justify-content: center; /* Centers the button group on the page */
+    gap: 20px; /* Space between the two groups */
+    margin-top: 25px;
+}
+
+/* Style for the Call Button (<a> tag) */
+.call-button {
+    background-color: #00796b;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s; 
+    display: inline-flex;
+    align-items: center;
+}
+
+.call-button:hover {
+    background-color: #004d40;
+}
+
+.submit-button:hover {
+    background-color: #004d40;
 }
 
