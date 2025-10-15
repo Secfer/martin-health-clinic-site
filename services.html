@@ -16,45 +16,50 @@
     </header>
 
     <section id="hero">
-        <h1>Our Specialized Mobile Wound Care Services</h1>
-        <p>We provide advanced, evidence-based treatments for a variety of acute and chronic wounds, all within the patient's home setting.</p>
-        <button id="openModalBtn">Request a Consultation</button>
-    </section>
 
-    <section id="about">
-        <img src="images/wound-care-services.jpg" alt="A photo showing specialized wound care tools or a clinical setting." class="banner-image">
+        <h1 class="service-hero-title">Our Specialized Mobile Wound Care Services</h1>
+        <p class="service-hero-subtitle">We provide advanced, evidence-based treatments for a variety of acute and chronic wounds, all within the patient's home setting.</p>
         
         <h2>Core Treatment Programs</h2>
 
-        <!-- ***UPDATED HTML ELEMENT!-->
         <div class="section-intro">
-            Our programs provide **specialized, targeted care** for complex wounds, utilizing advanced techniques delivered effectively to your Home. 
+            Our programs provide specialized, targeted care for complex wounds, utilizing advanced techniques delivered discreetly and effectively to your residence.
         </div>
-        
-        <div class="services-list">
+
+        <div class="service-list">
 
             <div class="service-card">
-                <h3> Initial Assessment & Personalized Care Plan</h3>
-                <p>Every journey begins with a thorough IN-HOME evaluation by Dr. Martin. This includes detailed history collection, wound assessment, and the development of a specific, step-by-step treatment plan to achieve optimal healing.</p>
+                <img src="images/assessment.png" alt="Patient assessment icon" class="card-icon">
+                <h3>Initial Assessment & Personalized Care Plan</h3>
+                <p>Every journey begins with a thorough <strong>IN-HOME evaluation</strong> by Dr.Martin. This includes detailed history collection, wound assessment, and the development of a specific, step-by-step treatment plan to achieve optimal healing.</p>
             </div>
 
             <div class="service-card">
+                <img src="images/management.png" alt="Wound management icon" class="card-icon">
                 <h3>Complex Wound Management</h3>
-                <p>Advanced therapies for diabetic ulcers, venous stasis ulcers, pressure injuries, and traumatic wounds.</p>
+                <p>Advanced, evidence-based therapies for difficult wounds including diabetic ulcers, venous stasis ulcers, pressure injuries, and traumatic wounds.</p>
             </div>
 
-            <div class="service-card">  
-                <h3>Infection & Biofilm Control</h3>
-                <p>Cutting-edge techniques to manage local infection and reduce biofilm, accelerating the healing process.</p>
-            </div>
-                
             <div class="service-card">
-                <h3>Patient Education & Prevention</h3>
-                <p>Dedicated time spent with patients and family to ensure understanding of home care and recurrence prevention.</p> 
-            </div>  
+                <img src="images/infection.png" alt="Infection Control icon" class="card-icon">
+                <h3>Infection & Biofilm Control</h3>
+                <p>Cutting-edge techniques and protocols to manage local infection, reduce harmful biofilm, and establish a clean wound environment, accelerating the healing process.</p>
+            </div>
 
+            <div class="service-card">
+                <img src="images/education.png" alt="Patient education icon" class="card-icon">
+                <h3>Patient Education & Prevention</h3>
+                <p>Dedicated time spent with patients and family to ensure complete understanding of home care, dressing changes, nutritional needs, and prevention of future wound recurrence.</p>
+            </div>
         </div>
+
+        <div class="cta banner">
+            <h2>Ready to Begin Your Healing Journey?</h2>
+            <button id="openModalBtn">Request a Consultation</button>
+        </div>
+                
     </section>
+
 
     <footer>
         <p>&copy; 2025 Martin Healthcare Clinic. All rights reserved.</p>
@@ -105,14 +110,8 @@
             modal.style.display = "none";
         }
         
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none"
-            }
-        }  
     </script>
-    
+
 </body>
 
     
