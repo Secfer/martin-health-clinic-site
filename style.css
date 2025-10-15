@@ -106,6 +106,11 @@ nav a:first-child {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+
+
+
+/*** SECTION START FOR MOBILE FIXES ***/
+
 /* Madia query for smaller screens: stack items vertically */
 @media (max-width: 768px) {
     #hero {
@@ -122,6 +127,60 @@ nav a:first-child {
     }
 
 }
+
+/* Fixes Doctor Bio Flow on Mobile */
+@media (max-width: 600px) { 
+    /* Force the image to stop floating and become a full block */   
+.doctor-profile img {
+    float: none;
+    margin: 0 auto 20px auto; /* Center the image and add space below it */
+    display: block;
+}
+
+/* Center the profile content */
+.doctor-profile {
+    text-align: center;
+}
+
+/* Remove the after float fix for mobile */
+.doctor-profile::after {
+    content: none;
+}
+
+}
+
+/* Fixes Services Grid on Mobile */
+@media (max-width: 768px) {
+    .service-list {
+        /* Override the multi-column grid with a single column */
+        grid-template-columns: 1ft; /* Forces one column only */
+        padding: 0 10px; /* Add some padding on the sides */
+    }
+}
+
+
+/* Fixes Header Navigation on Mobile */
+@media (max-width: 500px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+nav a {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+nav a:first-child {
+    margin-right: 0;
+}
+
+}
+
+/*** SECTION END FOR MOBILE FIXES ***/
+
+
 
 
 /*New Hover effect for the button */
