@@ -107,82 +107,6 @@ nav a:first-child {
 }
 
 
-
-
-/*** SECTION START FOR MOBILE FIXES ***/
-
-/* Madia query for smaller screens: stack items vertically */
-@media (max-width: 768px) {
-    #hero {
-        flex-direction: column; /* Stack content and image vertically */
-        text-align: center; /* Center text when stacked */
-        padding-left: 5%; /* Adjust padding for smaller screens */
-        padding-right: 5%;
-    }
-
-
-.hero-content {
-    text-align: center; /* Center text within its div when stacked */
-    margin-bottom: 30px; /* Add space between text and image */
-    }
-
-}
-
-/* Fixes Doctor Bio Flow on Mobile */
-@media (max-width: 600px) { 
-    /* Force the image to stop floating and become a full block */   
-.doctor-profile img {
-    float: none;
-    margin: 0 auto 20px auto; /* Center the image and add space below it */
-    display: block;
-}
-
-/* Center the profile content */
-.doctor-profile {
-    text-align: center;
-}
-
-/* Remove the after float fix for mobile */
-.doctor-profile::after {
-    content: none;
-}
-
-}
-
-/* Fixes Services Grid on Mobile */
-@media (max-width: 768px) {
-    .service-list {
-        /* Override the multi-column grid with a single column */
-        grid-template-columns: 1ft; /* Forces one column only */
-        padding: 0 10px; /* Add some padding on the sides */
-    }
-}
-
-
-/* Fixes Header Navigation on Mobile */
-@media (max-width: 500px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
-    }
-
-nav a {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-nav a:first-child {
-    margin-right: 0;
-}
-
-}
-
-/*** SECTION END FOR MOBILE FIXES ***/
-
-
-
-
 /*New Hover effect for the button */
 #hero button:hover {
     background-color: #004d40; /* Darkens to the main header color */
@@ -616,3 +540,59 @@ footer p {
     background-color: #004d40;
 }
 
+
+
+/*** SECTION START FOR MOBILE FIXES ***/
+
+/* Fixes Doctor Bio Flow on Mobile */
+@media (max-width: 768px) { 
+    /* Force the image to stop floating and become a full block */ 
+    .doctor-profile {
+        text-align: center !important; /* Force center align */
+    }  
+
+    /* Target the image specifically */
+.doctor-profile img {
+    float: none !important; 
+    margin: 0 auto 20px auto !important; /* Center the image and add space below it */
+    display: block !important;
+}
+
+
+/* Remove the after float fix for mobile */
+.doctor-profile::after {
+    content: none !important;
+}
+
+}
+
+/* Fixes Services Grid on Mobile */
+@media (max-width: 768px) {
+    .service-list {
+        /* Override the multi-column grid with a single column */
+        grid-template-columns: 1fr !important; /* Forces one column only */
+        padding: 0 15px; /* Add some padding on the sides */
+    }
+}
+
+
+/* Fixes Header Navigation on Mobile */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 10px 20px !important;
+    }
+
+nav a {
+    margin: 5px 0 !important;
+    font-size: 14px !important;
+}
+
+nav a:first-child {
+    margin-right: 0 !important;
+}
+
+}
+
+/*** SECTION END FOR MOBILE FIXES ***/
