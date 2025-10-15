@@ -577,21 +577,34 @@ footer p {
 
 
 /* Fixes Header Navigation on Mobile */
+
+nav a:first-child {
+    font-size: 22px !important; /* **Makes the logo/name bigger than the links** */
+    font-weight: bold !important; /* **Makes it stand out** */
+    margin-right: auto; /* Pushes the other links to the right on desktop */
+    padding-bottom: 5px; /* Adds a little vertical separation line */
+    border-bottom: 2px solid white; /* Subtle white line underneath for emphasis */
+}
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column !important;
         align-items: flex-start !important;
-        padding: 10px 20px !important;
+        padding: 10px 20px;
     }
 
-nav a {
+    nav a {
     margin: 5px 0 !important;
     font-size: 14px !important;
 }
 
-nav a:first-child {
-    margin-right: 0 !important;
-}
+    nav a:first-child {
+        margin-right: 0 !important; /* **CRITICAL: Stops the auto-push on mobile** */
+        border-bottom: none; /* Removes the distracting white line on mobile */
+        margin-bottom: 15px !important;
+        padding-bottom: 0 !important;
+    }
+
 
 }
 
