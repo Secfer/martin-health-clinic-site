@@ -1,0 +1,249 @@
+/* 1. Reset: Cleans up default browser styling */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* A clean, professional font */
+}
+
+/* 2. Body: Sets the background color for the whole page */
+body {
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333; /* Dark text color for readability */
+    line-height: 1.7; /*INCREASES SPACE BETWEEN LINES for better flow */
+    font-size: 16.5px; /* Slight increase in base font size */
+}
+
+/* 3. Header/Navigation Bar Styling */
+header {
+    background-color: #004d40; /* A dark teal/green for a professional, calming look */
+    padding: 20px 0;
+}
+
+nav {
+    display: flex; /* Arranges the links horizontally */
+    max-width: 1100px;
+    margin: 0 auto; /* Centers the navigation links */
+    padding: 0 20px;
+    align-items: center;
+}
+
+nav a {
+    color: white; /* White text for links */
+    text-decoration: none; /* Removes the ugly underline */
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s; /* Smooth color change on hover */
+}
+
+/* Making the first link (Company Name) bigger/more prominent */
+nav a:first-child {
+    margin-right: auto; /* Pushes other links to the right */
+    font-size: 20px;
+}
+
+/* 4. Hero Section Styling */
+#hero {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 40px;
+}
+
+#hero h1 {
+    font-size: 48px;
+    color: #004d40; /* Matchiing the header color */
+    margin-bottom: 15px;
+}
+
+#hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/*Styling the button */
+#hero button {
+    background-color: #00796b; /* A slightly brighter teal for the button */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; 
+    font-weight: bold;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/*New Hover effect for the button */
+#hero button:hover {
+    background-color: #004d40; /* Darkens to the main header color */
+}
+
+/* 5. General Section Styling - Centers and standardizes padding */
+section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+section h2 {
+    font-size: 32px;
+    color: #004d40;
+    margin-bottom: 20px;
+}
+
+/* 6. Footer Syling */
+footer {
+    background-color: #333; /*Dark Background for footer */
+    color: white; 
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+/* 7. Doctor Profile Styling */
+.doctor-profile p{
+    line-height: 1.6; /* Improves readability of long paragraphs */
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.credentials {
+    background-color: #e8f5e9; /* Light, calming green background */
+    padding: 25px;
+    border-left: 5px solid #004d40; /* A strong visual line */
+}
+
+.credentials h3 {
+    margin-bottom: 15px;
+    color: #004d40;
+}
+
+.credentials ul {
+    list-style: none; /* Removes the default bullet points */
+}
+
+.credentials li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #ccc; /* Subtle separation for list items */
+}
+
+/* 8. Services Page Specific Syling - Using Grid for Card Layout */
+
+/* Styles the entire block containing services on services.html (GRID CONTAINER)*/
+.service-list {
+    display: grid; 
+    /* Set up a responsive grid: 2 columns if screen is wide, otherwise 1 column */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px; /*Adds space between the cards*/
+    margin-top: 30px;
+}
+
+/* Styles the individual cards */
+.service-card {
+    background-color: white; /*White background for clean look */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgva(0, 0, 0, 0.08); /* More noticeable shadow for a "card" feel */
+    transition: transform 0.3s, box-shadow 0.3s; /*Smooth transition for hover */
+}
+
+/* Add a subtle interactive touch (optional, but professional) */
+.service-card:hover{
+    transform: translateY(-5px); /* Lifts the card slightly */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.service-card h3 {
+    font-size: 24px;
+    color: #004d40;
+    margin-bottom: 10px;
+}
+
+.service-card p{
+    font-size: 16.5px;
+    line-height: 1.6;
+}
+
+/* Styles the individual service headings */
+.service-list h3 {
+    font-size: 24px;
+    color: #004d40;
+    margin-bottom: 5px; /* Closer to the paragrapph it belongs to */
+    border-bottom: 2px solid #e0f2f1; /* Subtle line under the heading */
+    padding-bottom: 5px;
+}
+
+/* Styles the paragraph text underneath each service heading */
+.service-list p {
+    font-size: 16.5px;
+    margin-bottom: 20px; /* Adds space after the paragraph */
+}
+
+/* 9. Contact Page Specific Styling */
+
+/* Use Flexbox to put the Service Area nad Hours side-by-side on larger screens */
+.contact-info {
+    display: flex;
+    gap: 40px; /* Space between the two blocks */
+    margin-top: 20px;
+    /* Ensure wrapping for smaller mobile screens */
+    flex-wrap: wrap;
+}
+
+.info-block {
+    /* Each block takes up half the space, minus the gap */
+    flex: 1;
+    padding: 20px 30px;
+    background-color: white; /* Give the info a white background */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Very subtle shadow for depth */
+}
+
+.info-block h3 {
+    color: #004d40;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #e0f2f1;
+    padding-bottom: 5px;
+}
+
+/* 10. Styling for Prominent Introductory Text (Section Subtitle in Services page) */
+.section-intro {
+    font-size: 18px; /*Slightly larger text */
+    font-style: italic; /*Gives it a distict, pull-quote look */
+    color: #4a4a4a; /* A medium gray, slightly softer than the heading */
+    max-width: 800px; /* Keeps the lines short for readability */
+    margin: 15px auto 40px auto; /* Adds significant space above/below to separate it */
+    text-align: center; /* Centers the text under the heading */
+    padding: 15px 0;
+    border-bottom: 1px dashed #ccc; /*Subtle separation line */
+}
+
+/* 11. Doctor Profile Image Styling */
+.doctor-profile img {
+    float: left; /* Makes the image sit on the left and wraps text around it */
+    width: 250px; /* Sets a fixed width for a neat professional size */
+    height: 250px; /* Optional: Keep the height and width the same for a perfect square */
+    object-fit: cover; /* Ensures the image fills the ara without being stretched */
+    border-radius: 50%; /* Makes the image perfectly round for a modern look */
+    margin-right: 30px; /* Adds space between the image and the text */
+    margin-bottom: 20px;
+    border: 5px solid #e8f6e9; /* Light border matching the background color */
+}
+
+/* Clear the float so the footer doesn't get pulled up */
+.doctor-profile::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* 12. Full-Width Banner Image Styling */
+.banner-image {
+    width: 100%; /* Makes the image span the entire content width */
+    max-height: 350px; /* Limits the hieght for a banner effect */
+    object-fit: cover; /* Ensures the image looks good without distorting */
+    border-radius: 8px; /* Matches the rounded corners of your cards */
+    margin-bottom: 40px; /* Adds space below the image */
+}
