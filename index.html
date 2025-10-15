@@ -16,30 +16,46 @@
     </header>
 
     <section id="hero">
-        <h1>Expert Wound Care, Delivered to Your Home.</h1>
-        <p>Specialized, compassionate wound care for chronic and complex wounds, provided in the comfort and convenience of the patient's home.</p>
-        <button id="openModalBtn">Book Your Appointment Today</button>
+        <div class="hero content">
+            <h1>Expert Wound Care, Delivered to Your Home.</h1>
+            <p>Specialized, compassionate wound care for chronic and complex wounds, provided in the comfort and convenience of the patient's home.</p>
+            <button id="openModalBtn">Book Your Appointment Today</button>
+        </div>
+        <div class="hero-image">
+            <img src="images/hero-illustration.jpg" alt="compassionate in-home wound care services.">
+        </div>    
     </section>
 
     <section id="about">
-        <h2>Meet Dr. Martin</h2>
+        <h2>Meet Dr. Martin, FNP</h2>
         <div class="doctor-profile">
             <img src="images/doctor-profile.jpg" alt="Professional headshot of Dr. Martin, Wound Care Specialist">
             
-            <p>Dr. Martin, board-certified in Wound Care with a background in Neurosurgery and Primary Care, is dedicated to providing comprehensive and compassionate wound care. His approach emphasizes precision, personalized treatment plans, and continuous patient education, ensuring the best possible outcomes for recovery and quality of life. He believes in treating the patient, not just the wound. </p>
+            <p>Dr. Martin is a highly experienced Family Nurse Practitioner (FNP) whose clinical approach is built on a rare and powerful foundation: <strong>two decades of high-level surgical expertise</strong> combined with compassionate, patient-centered nursing care.</p>
+            
+            <p>His primary goal is to significantly improve his patients' quality of life through meticulous, evidence-based wound management, delivered right to your home.</p>
+
+            <p class="highlight-text">Why his background matters for Wound Care: His advanced residency in neurosurgery provides unparalleled insight into complex physiology and surgical healing principles—an invaluable advantage when treating non-healing and chronic wounds.</p>
 
             <div class="credentials">
                 <h3>Credentials & Expertise:</h3>
                 <ul>
-                    <li>Certified Wound Specialist (CWS)</li>
-                    <li>Over 20 years of surgical experience</li>
-                    <li>Focus on chronic, non-healing, and post-surgical wounds</li>
+                    <li>Family Nurse Practitioner (FNP) - Graduate of Miami Regional University (2023)</li>
+                    <li>General Practitioner & Neurosurgeon - Graduated from the University of Medical Sciences of Havana (2006)</li>
+                    <li>Over 20 years of clinical experience, including specialized surgical training</li>
+                    <li>Extensive experience in high-acuity settings (e.g., Spring Valley Hospital, Horizon Specialty Hospital)</li>
+                    <li>Dedicated to mobile, personalized, and compassionate patient care</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <footer>
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact & Booking</a>
+        </nav>    
         <p>&copy; 2025 Martin Healthcare Clinic. All rights reserved.</p>
     </footer>
 
@@ -88,12 +104,6 @@
             modal.style.display = "none";
         }
         
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none"
-            }
-        }
         
     </script>
 </body>
