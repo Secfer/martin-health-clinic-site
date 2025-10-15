@@ -18,7 +18,7 @@
     <section id="hero">
         <h1>Expert Wound Care, Delivered to Your Home.</h1>
         <p>Specialized, compassionate wound care for chronic and complex wounds, provided in the comfort and convenience of the patient's home.</p>
-        <button>Book Your Appointment Today</button>
+        <button id="openModalBtn">Book Your Appointment Today</button>
     </section>
 
     <section id="about">
@@ -43,6 +43,59 @@
         <p>&copy; 2025 Martin Healthcare Clinic. All rights reserved.</p>
     </footer>
 
+    <div id="bookingModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Request Your In-Home Appoitnment</h2>
+            <p>Please fill out the form below. We will call you to confirm your visit details.</p>
+
+            <form name="modal-request" method="POST" data-netlify="true">
+                <label for="name">Full Name <span class="required-star">*</span></label>
+                <input type="text" name="name" required>
+
+                <label for="phone">Phone Number <span class="required-star">*</span></label>
+                <input type="tel" name="phone" required>
+
+                <label for="address">Full Address for Visit <span class="required-star">*</span></label>
+                <input type="text" name="address" required>
+
+                <label for="purpose">Brief Reason for Visit (Optional)</label>
+                <textarea name="purpose"></textarea>
+
+                <button type="submit" class="submit-button">Submit Appointment Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("bookingModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModalBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close-btn")[0];
+        
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block"
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none"
+            }
+        }
+        
+    </script>
 </body>
 
     
