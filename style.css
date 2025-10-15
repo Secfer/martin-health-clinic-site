@@ -247,3 +247,111 @@ footer {
     border-radius: 8px; /* Matches the rounded corners of your cards */
     margin-bottom: 40px; /* Adds space below the image */
 }
+
+/* 13. MODAL (POP-UP) STYLING */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity - The background overlay */   
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered horizontally */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal-content h2 {
+    color: #004d40;
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+
+/* The Close Button */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style the form elements inside the modal */
+.modal-content label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #004d40;
+    font-size: 14px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="tel"],
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.modal-content .submit-button {
+    width: 100%;
+}
+
+/* Submit button customization */
+.submit-button {
+    background-color: #00796b; /* The brighter teal color */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 25px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #004d40; /* Darker teal for hover effect */
+}
+
+/* 14 Styling the required asterisk */
+.required-star {
+    color:red !important; /* A standard, noticeable red color */
+    font-weight: bold;
+    font-size: 1.1em; /* Makes the asterisk slightly larger than the text */
+}
+
+/* Optional: Ensure the (Optional) text is clear but not aggressive */
+.modal-content label span {
+    font-weight: normal;
+    color: #555;
+}
+
