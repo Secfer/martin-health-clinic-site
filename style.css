@@ -540,7 +540,7 @@ footer p {
     background-color: #004d40;
 }
 
-/ *22. Coming Soon Page Styles */
+/* 22. Coming Soon Page Styles */
 .coming-soon-hero {
     text-align: center;
     padding: 100px 20px;
@@ -568,6 +568,35 @@ footer p {
     margin-top: 30px;
     font-weight: bold;
     font-size: 18px;
+}
+
+/* 23. Email Signup Form Styles ***TEMPORARY*** */
+.email-signup-form {
+    display: flex; /* Aligns input and button horizontally */
+    justify-content: center; /* Centers the form horizontally */
+    gap: 10px; /* Space between input field and button */
+    margin-top: 20px;
+    max-width: 500px; /* Keeps the form from being too wide */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.email-signup-form input[type="email"] {
+    flex: 1; /* Allows the input field to take up available space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    max-width: 300px;
+}
+
+/* Ensure the button looks correct inside the form (you can reuse the .submit-button style) */
+.email-signup-form .submit-button {
+    width: auto; /* Overrides the previous 100% width rule */
+    flex-shrink: 0; /* Prevents the button from shrinking too much */
+    padding: 10px 15px; /* Adjust button padding */
+    font-size: 16px;
+    margin-top: 0; /* Remove top margin from the button */
 }
 
 
@@ -639,4 +668,5 @@ nav a:first-child {
 }
 
 /*** SECTION END FOR MOBILE FIXES ***/
+
 
