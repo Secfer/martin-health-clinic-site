@@ -12,10 +12,14 @@
         <h2 class="coming-soon-h2">Expert Mobile Wound Care in Las Vegas, Starting in 2026.</h2>
         <p>We are finalizing our accreditation and will be accepting appointments shortly.</p>
 
-        <button id="openModalBtn" class="submit-button">Sign up for Launch Updates</button>
+        <form name="launch-signup" method="POST" data-netlify="true" class="email-signup-form">
+        <input type="email" name="email" placeholder="Enter your email for launch updates" required>
+        <input type="checkbox" name="bot-field" style="display: none;">
+        <button type="submit" class="submit-button">Sign Up for Launch Updates</button> 
+    </form>
 
-        <p class="coming-soon-contact">For Urgent Inquiries, please call: (551) 273-9921</p>
-    </div>   
+    <p class="coming-soon-contact">For Urgent Inquiries, please call: (551) 273-9921</p>
+</div>
         
     
 </body>
@@ -23,4 +27,5 @@
     
 
 </html>
+
 
