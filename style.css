@@ -540,6 +540,36 @@ footer p {
     background-color: #004d40;
 }
 
+/ *22. Coming Soon Page Styles */
+.coming-soon-hero {
+    text-align: center;
+    padding: 100px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 70vh; /* Ensures it fills most of the screen vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.coming-soon-h1 {
+    color: #004d40;
+    font-size: 44px;
+    margin-bottom: 10px;
+}
+
+.coming-soon-h2 {
+    color: #00796b;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.coming-soon-contact {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
 
 
 /*** SECTION START FOR MOBILE FIXES ***/
@@ -609,3 +639,4 @@ nav a:first-child {
 }
 
 /*** SECTION END FOR MOBILE FIXES ***/
+
