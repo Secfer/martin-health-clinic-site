@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wound Care Services | Martin Healthcare Clinic</title>
+    <link rel="stylesheet" href="style.css"> </head>
+
+<body>
+    <header>
+        <nav>
+    <a href="index.html">Martin Healthcare Clinic</a>
+
+    <div class="nav-button-group">
+        <a href="index.html" class="nav-button">Home</a> 
+
+        <a href="services.html" class="nav-button">Services</a>
+        <a href="contact.html" class="nav-button">Contact & Booking</a>
+    </div>
+
+</nav>
+
+<div class="language-bar">
+        <a href="es/services.html" class="language-switch">Español</a> 
+    </div>
+
+    </header>
+
+    <section id="hero">
+
+        <h1 class="service-hero-title">Our Specialized Mobile Wound Care Services</h1>
+        <p class="service-hero-subtitle">We provide advanced, evidence-based treatments for a variety of acute and chronic wounds, all within the patient's home setting.</p>
+        
+        <h2>Core Treatment Programs</h2>
+
+        <div class="section-intro">
+            Our programs provide specialized, targeted care for complex wounds, utilizing advanced techniques delivered discreetly and effectively to your residence.
+        </div>
+
+        <div class="service-list">
+
+            <div class="service-card">
+                <img src="images/assessment.png" alt="Patient assessment icon" class="card-icon">
+                <h3>Initial Assessment & Personalized Care Plan</h3>
+                <p>Every journey begins with a thorough <strong>IN-HOME evaluation</strong> by Dr.Martin. This includes detailed history collection, wound assessment, and the development of a specific, step-by-step treatment plan to achieve optimal healing.</p>
+            </div>
+
+            <div class="service-card">
+                <img src="images/management.png" alt="Wound management icon" class="card-icon">
+                <h3>Complex Wound Management</h3>
+                <p>Advanced, evidence-based therapies for difficult wounds including diabetic ulcers, venous stasis ulcers, pressure injuries, and traumatic wounds.</p>
+            </div>
+
+            <div class="service-card">
+                <img src="images/infection.png" alt="Infection Control icon" class="card-icon">
+                <h3>Infection & Biofilm Control</h3>
+                <p>Cutting-edge techniques and protocols to manage local infection, reduce harmful biofilm, and establish a clean wound environment, accelerating the healing process.</p>
+            </div>
+
+            <div class="service-card">
+                <img src="images/education.png" alt="Patient education icon" class="card-icon">
+                <h3>Patient Education & Prevention</h3>
+                <p>Dedicated time spent with patients and family to ensure complete understanding of home care, dressing changes, nutritional needs, and prevention of future wound recurrence.</p>
+            </div>
+        </div>
+
+        <div class="cta banner">
+            <h2>Ready to Begin Your Healing Journey?</h2>
+            <button id="openModalBtn">Request a Consultation</button>
+        </div>
+                
+    </section>
+
+
+    <footer>
+        <div class="hero-image">
+            <img src="images/hero-illustration.jpg" alt="compassionate in-home wound care services.">
+        </div>    
+        <nav class="footer-nav">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="services.html" class="nav-button">Services</a>
+            <a href="contact.html" class="nav-button">Contact & Booking</a>
+        </nav>    
+        <p>&copy; 2025 Martin Healthcare Clinic. All rights reserved.</p>
+    </footer>
+
+    <div id="bookingModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Request Your In-Home Appointment</h2>
+            <p>Please fill out the form below. We will call you to confirm your visit details.</p>
+
+            <form name="modal-request" method="POST" data-netlify="true">
+                <input type="checkbox" name="bot-field" style="display: none;">
+                
+                <label for="name">Full Name <span class="required-star">*</span></label>
+                <input type="text" name="name" required>
+
+                <label for="phone">Phone Number <span class="required-star">*</span></label>
+                <input type="tel" name="phone" required>
+
+                <label for="address">Full Address for Visit <span class="required-star">*</span></label>
+                <input type="text" name="address" required>
+
+                <label for="purpose">Brief Reason for Visit (Optional)</label>
+                <textarea name="purpose"></textarea>
+
+                <button type="submit" class="submit-button">Submit Appointment Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("bookingModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModalBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close-btn")[0];
+        
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block"
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+    </script>
+
+</body>
+
+    
+
+</html>

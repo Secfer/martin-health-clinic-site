@@ -1,0 +1,758 @@
+/* 1. Reset: Cleans up default browser styling */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* A clean, professional font */
+}
+
+/* 2. Body: Sets the background color for the whole page */
+body {
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333; /* Dark text color for readability */
+    line-height: 1.7; /*INCREASES SPACE BETWEEN LINES for better flow */
+    font-size: 16.5px; /* Slight increase in base font size */
+}
+
+/* 3. Header/Navigation Bar Styling */
+header {
+    background-color: #004d40; /* A dark teal/green for a professional, calming look */
+    padding: 20px 0;
+}
+
+nav {
+    display: flex; /* Enables flexible alignment */
+    align-items: center; /* Vertically centers items */
+    justify-content: space-between; /* **CRITICAL: Pushes items to opposite edges** */
+    max-width: 1100px; /* Maintains center alignment on desktop */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav a {
+    color: white; /* White text for links */
+    text-decoration: none; /* Removes the ugly underline */
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s; /* Smooth color change on hover */
+}
+
+/* Making the first link (Company Name) bigger/more prominent */
+nav a:first-child {
+font-size: 24px; /* Significantly larger than menu links */
+    font-weight: 700; /* Extra bold text */
+    color: white; /* Ensures text is white */
+    text-decoration: none; /* Removes the underline */
+    margin-right: auto; /* Pushes the buttons to the right */
+    padding-bottom: 5px; /* Adds space for the line */
+    border-bottom: 2px solid white; /* Subtle white line underneath for emphasis */
+    transition: opacity 0.3s; /* Smooth transition on hover */
+}
+
+nav a:first-child:hover {
+    opacity: 0.8; /* Slight dim on hover */
+}
+
+/* 4. Hero Section Styling */
+#hero {
+    background-color: #e8f5e9;
+    padding: 50px 0;
+    text-align: left; /* Keep text aligned to left fore hero-content */
+    
+}
+
+#hero h1 {
+    font-size: 38px;
+    color: #004d40; /* Matchiing the header color */
+    margin-bottom: 15px;
+}
+
+#hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/*Styling the button */
+#hero button {
+    background-color: #00796b; /* A slightly brighter teal for the button */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; 
+    font-weight: bold;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+
+
+/* Adjust text/button content width */
+.hero-content {
+    flex: 1.5; /* Allows this content to grow and shrink */
+    min-width: 300px; /* Ensures it doesn't get too small */
+    max-width: 600px; /* Prevents it from getting too wide on large screens */
+    text-align: left; /* Ensure text is left aligned within its div */
+}
+
+/* Style for the image container and the image itself */
+.hero-image {
+    flex: 0.5; /* Allows the image to grow and shrink */
+    min-width: 250px; /* Ensures it doesn't get too small */
+    max-width: 400px; /* Max Width for the image */
+    display: flex; /* Use flex to center image if it is smaller */
+    justify-content: center; /* Center image withing its container */
+}
+
+.hero-image img {
+    max-width: 100%; /* ensure image doesn't overflow its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Consistent rounder corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+
+/*New Hover effect for the button */
+#hero button:hover {
+    background-color: #004d40; /* Darkens to the main header color */
+}
+
+/* 5. General Section Styling - Centers and standardizes padding */
+section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+section h2 {
+    font-size: 32px;
+    color: #004d40;
+    margin-bottom: 20px;
+}
+
+/* 6. Footer Syling */
+footer {
+    background-color: #333; /*Dark Background for footer */
+    color: white; 
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+/* OPTIONAL: Ensure the links are displayed in a block above the copyright */
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px; /* Space between links */
+    font-weight: normal;
+    display: inline-block; /* Allows margins to work horizontally */
+    padding: 5px 0 10px 0; /* Creates space between links and copyright */
+}
+
+.footer-nav {
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    max-width: 600px; /*Limits the width of the link block to ensure centering */
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 10px; /* Space above the copyright text */
+    font-size: 14px;
+    opacity: 0.8; /* Slightly grayed out for minor text */
+}
+
+
+/* 7. Doctor Profile Styling */
+.doctor-profile p{
+    line-height: 1.6; /* Improves readability of long paragraphs */
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.credentials {
+    background-color: #e8f5e9; /* Light, calming green background */
+    padding: 25px;
+    border-left: 5px solid #004d40; /* A strong visual line */
+}
+
+.credentials h3 {
+    margin-bottom: 15px;
+    color: #004d40;
+}
+
+.credentials ul {
+    list-style: none; /* Removes the default bullet points */
+}
+
+.credentials li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #ccc; /* Subtle separation for list items */
+}
+
+/* 8. Services Page Specific Syling - Using Grid for Card Layout */
+
+/* Styles the entire block containing services on services.html (GRID CONTAINER)*/
+.service-list {
+    display: grid; 
+    /* Set up a responsive grid: 2 columns if screen is wide, otherwise 1 column */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /*Adds space between the cards*/
+    margin-top: 30px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styles the individual cards */
+.service-card {
+    background-color: white; /*White background for clean look */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgva(0, 0, 0, 0.08); /* More noticeable shadow for a "card" feel */
+    transition: transform 0.3s, box-shadow 0.3s; /*Smooth transition for hover */
+
+    /*Layout for Icon/Text */
+    display: flex;
+    flex-direction: column; /* Stacks image, title, and text */
+    align-items: center; /* **Centers the items horizontally in the card** */
+    text-align: center;
+    padding: 30px;
+}
+
+/* Style fo the samll image/icon inside the card */
+.card-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border-radius: 50%; /* **Makes the icons round for a clean look** */
+    border: 2px solid #004d40; /* Optional: adds a slighter border */
+}
+
+
+/* Add a subtle interactive touch (optional, but professional) */
+.service-card:hover{
+    transform: translateY(-5px); /* Lifts the card slightly */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.service-card h3 {
+    font-size: 24px;
+    color: #004d40;
+    margin-bottom: 10px;
+}
+
+.service-card p{
+    font-size: 16.5px;
+    line-height: 1.6;
+}
+
+/* Styles the individual service headings */
+.service-list h3 {
+    font-size: 24px;
+    color: #004d40;
+    margin-bottom: 5px; /* Closer to the paragrapph it belongs to */
+    border-bottom: 2px solid #e0f2f1; /* Subtle line under the heading */
+    padding-bottom: 5px;
+}
+
+/* Styles the paragraph text underneath each service heading */
+.service-list p {
+    font-size: 16.5px;
+    margin-bottom: 20px; /* Adds space after the paragraph */
+}
+
+/* 9. Contact Page Specific Styling */
+
+/* Use Flexbox to put the Service Area and Hours side-by-side on larger screens */
+.contact-info {
+    display: flex; 
+    flex-wrap: wrap; /* Allows cards to wrap on smaler screens */
+    justify-content: space-between; /* Centers cards if there is extra space */
+    gap: 30px; /* Space between the two blocks */
+    margin-top: 30px;
+    max-width: 1100px; /* Restricts overall width of the card section */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Add osme horizontal padding */
+}
+
+.info-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Very subtle shadow for depth */
+    flex: 1 1 45%; /* Takes up 45% of the space, allowing 5% for the gap */
+    min-width: 280px; /* Minimum width before wrapping */
+    max-width: 500; /* Max Width for each card */
+    text-align: left; /* Keep text aligned left withing card */
+    
+    
+}
+
+.info-card h3 {
+    color: #004d40;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #e0f2f1;
+    padding-bottom: 5px;
+}
+
+/* 10. Styling for Prominent Introductory Text (Section Subtitle in Services page) */
+.section-intro {
+    font-size: 18px; /*Slightly larger text */
+    font-style: italic; /*Gives it a distict, pull-quote look */
+    color: #4a4a4a; /* A medium gray, slightly softer than the heading */
+    max-width: 800px; /* Keeps the lines short for readability */
+    margin: 15px auto 40px auto; /* Adds significant space above/below to separate it */
+    text-align: center; /* Centers the text under the heading */
+    padding: 15px 0;
+    border-bottom: 1px dashed #ccc; /*Subtle separation line */
+}
+
+/* 11. Doctor Profile Image Styling */
+.doctor-profile img {
+    float: left; /* Makes the image sit on the left and wraps text around it */
+    width: 250px; /* Sets a fixed width for a neat professional size */
+    height: 250px; /* Optional: Keep the height and width the same for a perfect square */
+    object-fit: cover; /* Ensures the image fills the ara without being stretched */
+    border-radius: 50%; /* Makes the image perfectly round for a modern look */
+    margin-right: 30px; /* Adds space between the image and the text */
+    margin-bottom: 20px;
+    border: 5px solid #e8f6e9; /* Light border matching the background color */
+}
+
+/* Clear the float so the footer doesn't get pulled up */
+.doctor-profile::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* 12. Full-Width Banner Image Styling */
+.banner-image {
+    width: 100%; /* Makes the image span the entire content width */
+    max-height: 350px; /* Limits the hieght for a banner effect */
+    object-fit: cover; /* Ensures the image looks good without distorting */
+    border-radius: 8px; /* Matches the rounded corners of your cards */
+    margin-bottom: 40px; /* Adds space below the image */
+}
+
+/* 13. MODAL (POP-UP) STYLING */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity - The background overlay */   
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered horizontally */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal-content h2 {
+    color: #004d40;
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+
+/* The Close Button */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style the form elements inside the modal */
+.modal-content label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #004d40;
+    font-size: 14px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="tel"],
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.modal-content .submit-button {
+    width: 100%;
+}
+
+/* Submit button customization */
+.submit-button {
+    background-color: #00796b; /* The brighter teal color */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 25px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #004d40; /* Darker teal for hover effect */
+}
+
+/* 14 Styling the required asterisk */
+.required-star {
+    color:red !important; /* A standard, noticeable red color */
+    font-weight: bold;
+    font-size: 1.1em; /* Makes the asterisk slightly larger than the text */
+}
+
+/* Optional: Ensure the (Optional) text is clear but not aggressive */
+.modal-content label span {
+    font-weight: normal;
+    color: #555;
+}
+
+/* 16. Styling for Bio Highlight */
+.highlight-text {
+    font-style: italic;
+    background-color: #e8f5e9; /* Light green background */
+    padding: 15px;
+    border-left: 4px solid #00796b; /* Teal accent bar */
+    margin: 25px 0;
+    line-height: 1.6;
+}
+
+
+/* 18. New Service Page Hero Adjustments */
+.service-hero-title {
+    font-size: 38px; /* Slightly smaller than the <h1> on the homepage */
+    color: #004d40;
+    margin-bottom: 10px; 
+}
+
+.service-hero-subtitle {
+    font-size: 18px;
+    margin-bottom: 30px; /* Space between text and button */
+}
+
+/* Reduce the padding on the main #hero container on this page */
+#hero {
+    max-width: 1100px;
+    margin: 30px auto; /* Reduced vertical margin */
+    padding: 20px 20px; /* Reduced vertical padding */
+    text-align: center;
+}
+
+.service-grid-wrapper {
+    margin-top: 50px; /* Separates the grid from the button */
+}
+
+.service-grid-wrapper h2 {
+    font-size: 32px;
+    color: #004d40;
+    margin-bottom: 10px;
+}
+
+
+/* 19 Styling for Service Area Map on Contact Page */
+.service-area-map {
+    max-width: 100%; /* Ensures the image does not overflow the card */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px; /* Matches card border-radius */
+    margin-bottom: 15px; /* Adds space below the image */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* 20 Sytling for Office Hours */
+.hours-list {
+    list-style: none; /* Removes default bullet points */
+    padding-left: 0;
+    margin: 10px 0 15px 0;
+}
+
+.hours-list {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+
+/* 21 Sytling for Side-by-Side action buttons */
+.action-buttons {
+    display: flex;  /* Alings items horizontally */
+    justify-content: center; /* Centers the button group on the page */
+    gap: 20px; /* Space between the two groups */
+    margin-top: 25px;
+    flex-direction: row; 
+    flex-wrap: wrap; /* Allows them to stack on very small screens */
+    align-items: center;
+}
+
+/* Style for the Call Button (<a> tag) */
+.call-button {
+    background-color: #00796b;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s; 
+    display: inline-flex;
+    align-items: center;
+}
+
+/* New: Ensure both buttons share equal space and align correctly */
+.action-buttons .call-button,
+.action-buttons .submit-button {
+    flex: 1; /* Allows them to share available space equally */
+    max-width: 250px; /* Limits overall size for a cleaner look */
+    /* CRITICAL: Ensure text is vertically centered within the button */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100px; /* **Fixed height to compensate for text wrapping** */
+    text-align: center;
+}
+
+.call-button:hover {
+    background-color: #004d40;
+}
+
+.submit-button:hover {
+    background-color: #004d40;
+}
+
+/* 22. Styling Navigation Links as Buttons */
+nav a:not(:first-child) { /* This targets all <a> links EXCEPT the first one */
+    background-color: #00796b; /* Teal background */
+    color: white; /* White text */
+    padding: 8px 15px; /* Adds padding to create the button shape */
+    border-radius: 5px;
+    text-decoration: none; /* Ensure no underline */
+    transition: background-color 0.3s; /* Smooth hover closer */
+
+
+    /* Margin override to group them slightly closer */
+    margin-left: 10px;
+}
+
+/* Hover effect for the new 'buttons' */
+nav a:not(:first-child):hover {
+    background-color: #004d40; /* Darkens on hover */
+}
+
+/* 23. Styling Foot Image (Logo) */
+footer .hero-image {
+    display: block;
+    max-width: 200px; /* **Small, controlled size** */
+    margin: 0 auto 15px auto; /* Centers the image and adds space below it */
+}
+
+footer .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; /* Keeps the professional look */
+}
+
+/* 24. Footer Navigation Styling (Buttons) */
+
+.footer-nav {
+    display: flex; /* **Enables horizontal alignment** */
+    justify-content: center; /* **CRITICAL: Evenly spaces the buttons** */
+    margin-top: 15px; 
+    margin-bottom: 10px; /* Space above copyright */
+    max-width: 600px; /* Controls link group width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-nav .nav-button {
+    background-color: #00796b; /* Teal background */
+    color: white;
+    padding: 8px 12px; /* Button padding */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin: 0 5px; /* **Small space between buttons** */
+    width: 125px; /* Use a fixed width (adjust this number slightly if needed) */
+    text-align: center; /* Centers the shorter text (Home, Services) */
+    display: block; /* Ensures the fixed width is applied correctly */
+}
+
+.footer-nav .nav-button:hover {
+    background-color: #004d40;
+}
+
+/* 25. Sytling the Button Group in the header */
+.nav-button-group a.nav-button { 
+    /* Targets any <a> tag that has the class .nav-button inside the .nav-button-group */
+    background-color: #00796b !important; /* Force background color */
+    color: white !important;
+    padding: 8px 12px !important;
+    border-radius: 5px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    transition: background-color 0.3s;
+}
+
+.nav-button-group a.nav-button:hover {
+    background-color: #004d40 !important;
+}
+
+/* 26. Styling for New Language Bar Container */
+.language-bar {
+    text-align: right; /* Pushes the content to the right */
+    padding: 5px 20px 0 0; /* Adds a little space at the top right */
+}
+
+/* Style the language link itself */
+.language-switch {
+    font-size: 14px;
+    color: #00D5AA; /* A distinct color for the switch */
+    text-decoration: underline;
+}
+
+.language-switch:hover {
+    color: white;
+}
+
+
+
+/* --- Mobile and Tablet Fixes (Start of all overrides) --- */
+
+/* Targets everything from tablet size down */
+@media (max-width: 768px) { 
+    /* 1. Doctor Bio Fix (for medium screens) */
+    .doctor-profile {
+        text-align: center !important;
+    }
+    .doctor-profile img {
+        float: none !important; 
+        margin: 0 auto 20px auto !important;
+        display: block !important;
+    }
+    .doctor-profile::after {
+        content: none !important;
+    }
+    
+    /* 2. Services Grid Fix (for medium screens) */
+    .service-list {
+        grid-template-columns: 1fr !important; /* Force single column */
+        padding: 0 15px;
+    }
+
+    /* 3. Header Navigation (for all mobile sizes, forcing stack) */
+    nav {
+        flex-direction: column !important; /* Stacks links and logo */
+        align-items: center !important;
+        padding: 10px 20px !important;
+        text-align: center !important;
+    }
+    
+    /* 4. Fix the Clinic Name: Remove the desktop push */
+    nav a:first-child {
+        margin: 10px auto !important; /* Centers the name link */
+        margin-right: 0 !important; /* CRITICAL: Kills the desktop push */
+        border-bottom: none !important; 
+        padding-bottom: 0 !important;
+        text-align: center;
+    }
+    
+    /* 5. Force the Button Group to stack and take full width (TINY PHONE FIX) */
+    .nav-button-group {
+        flex-direction: column !important;
+        width: 100% !important; 
+        margin: 10px auto 10px auto !important;
+    }
+
+    /* 6. Force each individual button to be a full-width block */
+    .nav-button-group a {
+        width: 100% !important;
+        padding: 12px 10px !important; 
+        font-size: 14px !important;
+        text-align: center !important;
+        margin: 5px auto !important; 
+        display: block !important;
+    }
+}
+
+/* Fixes Footer Navigation on Mobile */
+@media (max-width: 500px) {
+
+    /* 1. Force the footer navigation links to stack */
+    .footer-nav {
+        flex-direction: column !important; /* Forces vertical stack */
+        width: 100%; /* Allows the container to fill the footer space */
+        align-items: center !important; /* Centers the whole block of buttons */
+        margin-bottom: 20px;
+    }
+
+    /* 2. Force the individual buttons to be full-width blocks */
+    .footer-nav .nav-button {
+        width: 90% !important; /* Ensures the buttons fill the available space */
+        margin: 5px auto !important; /* Keeps the margin around them */
+        text-align: center !important;
+    }
+}
+
+/* Fixes Call/Book Buttons in the Contact Page Hero */
+@media (max-width: 600px) {
+    .action-buttons {
+        flex-direction: column !important; 
+        gap: 15px !important;
+        padding: 0 20px; /* Add padding to prevent buttons from hitting screen edges */
+    }
+
+    .call-button, 
+    .action-buttons .submit-button {
+        width: 100% !important; 
+        padding: 12px 10px;
+        font-size: 18px; /* Use a slightly larger size for readability */
+        text-align: center !important; /* **CRITICAL: Center the text inside the button** */
+        /* Ensure the height is flexible */
+        height: auto; 
+    }
+}
+
+/*** SECTION END FOR MOBILE FIXES ***/

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Appointment Booking | Marting Healthcare Clinic</title>
+    <link rel="stylesheet" href="style.css"> </head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Martin Healthcare Clinic</a>
+            
+            <div class="nav-button-group">
+                <a href="index.html" class="nav-button">Home</a>
+                
+                <a href="services.html" class="nav-button">Services</a>
+                <a href="contact.html" class="nav-button">Contact & Booking</a>
+        </nav>
+
+        <div class="language-bar">
+        <a href="es/contact.html" class="language-switch">Español</a> 
+        </div>
+
+    </header>
+
+    <section id="hero">
+        <h1>Book Your Appointment</h1>
+        <p>Use the information below to contact us or schedule your first visit.</p>
+
+        <div class="action-buttons">
+            <a href="tel:551-273-9921" class="call-button">
+                Call Us Now:<br>(551) 273-9921
+            </a>
+
+            <button id="openModalBtn" class="submit-button">
+                Book Appointment
+            </button>
+        </div>
+
+    </section>
+
+    <section id="about">
+        <h2>Clinic Location & Hours</h2>
+        <p>Our dedicated team is ready to help you on your path to healing.</p>
+        <div class="contact-info">
+            <div class="info-card">
+                <h3>Service Area</h3>
+                <img src="images/las-vegas-map.jpg" alt="Map of Las Vegas service area" class="service-area-map">    
+
+                <div class="service-area-text">   
+                    <p>Serving <strong>Las Vegas & Henderson Cities in Nevada.</strong></p>
+                    <p>Initial care provided exclusively in the <strong>patient's home.</strong></p>
+                </div>
+            </div>   
+
+            <div class="info-card">
+                <h3><strong>Office Hours for scheduling</strong></h3>
+                <p>You can reach Mr. Marting by phone during the following hours:</p>
+
+                <ul class="hours list">
+                    <li><strong>Monday-Wednesday:</strong> Anytime (24 hours)</li>
+                    <li><strong>Thursday - Sunday:</strong> After 6:00 PM PDT</li>
+                </ul>
+                <p>Visits are scheduled on a patient-by-patient basis.</P>
+            </div>
+        </div>     
+    </section>
+
+    <footer>
+        <div class="hero-image">
+            <img src="images/hero-illustration.jpg" alt="compassionate in-home wound care services.">
+        </div>    
+        <nav class="footer-nav">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="services.html" class="nav-button">Services</a>
+            <a href="contact.html" class="nav-button">Contact & Booking</a>
+        </nav>    
+        <p>&copy; 2025 Martin Healthcare Clinic. All rights reserved.</p>
+    </footer>
+
+    <div id="bookingModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Request Your In-Home Appointment</h2>
+            <p>Please fill out the form below. We will call you to confirm your visit details.</p>
+
+            <form name="modal-request" method="POST" data-netlify="true">
+                <input type="checkbox" name="bot-field" style="display: none;">
+                
+                <label for="name">Full Name <span class="required-star">*</span></label>
+                <input type="text" name="name" required>
+
+                <label for="phone">Phone Number <span class="required-star">*</span></label>
+                <input type="tel" name="phone" required>
+
+                <label for="address">Full Address for Visit <span class="required-star">*</span></label>
+                <input type="text" name="address" required>
+
+                <label for="purpose">Brief Reason for Visit (Optional)</label>
+                <textarea name="purpose"></textarea>
+
+                <button type="submit" class="submit-button">Submit Appointment Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("bookingModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModalBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close-btn")[0];
+        
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block"
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        
+    </script>
+
+</body>
+
+    
+
+</html>

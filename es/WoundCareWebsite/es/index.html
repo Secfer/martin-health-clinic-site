@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Healthcare Clinic</title>
+    <link rel="stylesheet" href="../style.css"> </head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Clínica Martin Healthcare</a>
+            
+            <div class="nav-button-group">
+                <a href="index.html" class="nav-button">Inicio</a>
+                
+                <a href="services.html" class="nav-button">Servicios</a>
+                <a href="contact.html" class="nav-button">Contacto y Citas</a>
+
+            </div>
+        </nav>
+        
+        <div class="language-bar">
+        <a href="../index.html" class="language-switch">English</a> 
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero content">
+            <h1>Cuidado experto de heridas, a domicilio.</h1>
+            <p>Cuidado especializado y compasivo de heridas crónicas y complejas, proporcionado en la comodidad y conveniencia del hogar del paciente.</p>
+            <button id="openModalBtn">Reserve su cita hoy mismo</button>
+        </div>
+        
+    </section>
+
+    <section id="about">
+        <h2>Conozca al Dr. Martin, enfermero certificado (FNP).</h2>
+        <div class="doctor-profile">
+            <img src="../images/doctor-profile.jpg" alt="Professional headshot of Dr. Martin, Wound Care Specialist">
+            
+            <p>El Dr. Martin es un enfermero de familia (FNP) con amplia experiencia cuyo enfoque clínico se basa en unos fundamentos poco comunes y muy sólidos: <strong>dos décadas de experiencia quirúrgica de alto nivel.</strong> combinado con una atención de enfermería compasiva y centrada en el paciente.</p>
+            
+            <p>Su objetivo principal es mejorar significativamente la calidad de vida de sus pacientes mediante un tratamiento meticuloso y basado en la evidencia de las heridas, que se lleva a cabo directamente en su domicilio.</p>
+
+            <p class="highlight-text">Por qué su experiencia es importante para el cuidado de heridas: su residencia avanzada en neurocirugía le proporciona un conocimiento sin igual sobre fisiología compleja y principios de cicatrización quirúrgica, una ventaja inestimable a la hora de tratar heridas crónicas y que no cicatrizan.</p>
+
+            <div class="credentials">
+                <h3>Credenciales y experiencia:</h3>
+                <ul>
+                    <li>Enfermero de familia (FNP) - Graduado por la Universidad Regional de Miami (2023)</li>
+                    <li>Médico generalista y neurocirujano - Graduado por la Universidad de Ciencias Médicas de La Habana (2006)</li>
+                    <li>Más de 20 años de experiencia clínica, incluida formación quirúrgica especializada.</li>
+                    <li>Amplia experiencia en entornos de alta complejidad (por ejemplo, Spring Valley Hospital, Horizon Specialty Hospital).</li>
+                    <li>Dedicado a la atención móvil, personalizada y compasiva del paciente.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="hero-image">
+            <img src="../images/hero-illustration.jpg" alt="compassionate in-home wound care services.">
+        </div>    
+        <nav class="footer-nav">
+            <a href="index.html" class="nav-button">Inicio</a>
+            <a href="services.html" class="nav-button">Servicios</a>
+            <a href="contact.html" class="nav-button">Contacto y Reservas</a>
+        </nav>    
+        <p>&copy; 2025 Martin Healthcare Clinic. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="bookingModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Solicite una cita a domicilio</h2>
+            <p>Rellene el siguiente formulario. Le llamaremos para confirmar los detalles de su visita.</p>
+
+            <form name="modal-request" method="POST" data-netlify="true">
+                <input type="checkbox" name="bot-field" style="display: none;">
+                
+                <label for="name">Nombre completo <span class="required-star">*</span></label>
+                <input 
+                    type="text" 
+                    name="name" 
+                    pattern="[A-Za-z\s]+" 
+                    title="Por favor, use solo letras y espacios."
+                    required>
+
+                <label for="phone">Número de teléfono <span class="required-star">*</span></label>
+                <input 
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholders="7025550123"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required>
+
+                <label for="address">Dirección completa para la visita <span class="required-star">*</span></label>
+                <input type="text" name="address" required>
+
+                <label for="purpose">Breve motivo de la visita (opcional)</label>
+                <textarea name="purpose" maxlength="500" placeholder="Describa sus necesidades brevemente..."></textarea>
+
+                <button type="submit" class="submit-button">Enviar solicitud de cita</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("bookingModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModalBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close-btn")[0];
+        
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block"
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+       // Target the phone input by its ID
+  const phoneInput = document.getElementById('phone');
+  
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function (e) {
+      // Replaces anything that isn't a digit (0-9) with an empty string
+      e.target.value = e.target.value.replace(/\D/g, '');
+    });
+  }   
+        
+    </script>
+</body>
+
+    
+
+</html>
