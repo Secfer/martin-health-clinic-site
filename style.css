@@ -21,11 +21,12 @@ header {
 }
 
 nav {
-    display: flex; /* Arranges the links horizontally */
-    max-width: 1100px;
-    margin: 0 auto; /* Centers the navigation links */
+    display: flex; /* Enables flexible alignment */
+    align-items: center; /* Vertically centers items */
+    justify-content: space-between; /* **CRITICAL: Pushes items to opposite edges** */
+    max-width: 1100px; /* Maintains center alignment on desktop */
+    margin: 0 auto;
     padding: 0 20px;
-    align-items: center;
 }
 
 nav a {
@@ -39,8 +40,18 @@ nav a {
 
 /* Making the first link (Company Name) bigger/more prominent */
 nav a:first-child {
-    margin-right: auto; /* Pushes other links to the right */
-    font-size: 20px;
+font-size: 24px; /* Significantly larger than menu links */
+    font-weight: 700; /* Extra bold text */
+    color: white; /* Ensures text is white */
+    text-decoration: none; /* Removes the underline */
+    margin-right: auto; /* Pushes the buttons to the right */
+    padding-bottom: 5px; /* Adds space for the line */
+    border-bottom: 2px solid white; /* Subtle white line underneath for emphasis */
+    transition: opacity 0.3s; /* Smooth transition on hover */
+}
+
+nav a:first-child:hover {
+    opacity: 0.8; /* Slight dim on hover */
 }
 
 /* 4. Hero Section Styling */
@@ -48,13 +59,7 @@ nav a:first-child {
     background-color: #e8f5e9;
     padding: 50px 0;
     text-align: left; /* Keep text aligned to left fore hero-content */
-    display: flex; /* Makes hero-content and hero image sit side-by-side */
-    align-items: center; /* Verticaly centers content within the hero section */
-    justify-content: center; /* Centers the flex items horizontally */
-    gap: 40px; /* Space between the text/button and the image */
-    flex-wrap: wrap; /* Allows items to wrap onto the next line on smaller screens */
-    padding-left: 10%; /* Adjust padding for better content placement */
-    padding-right: 10%;
+    
 }
 
 #hero h1 {
@@ -516,6 +521,9 @@ footer p {
     justify-content: center; /* Centers the button group on the page */
     gap: 20px; /* Space between the two groups */
     margin-top: 25px;
+    flex-direction: row; 
+    flex-wrap: wrap; /* Allows them to stack on very small screens */
+    align-items: center;
 }
 
 /* Style for the Call Button (<a> tag) */
@@ -532,6 +540,20 @@ footer p {
     align-items: center;
 }
 
+/* New: Ensure both buttons share equal space and align correctly */
+.action-buttons .call-button,
+.action-buttons .submit-button {
+    flex: 1; /* Allows them to share available space equally */
+    max-width: 250px; /* Limits overall size for a cleaner look */
+    /* CRITICAL: Ensure text is vertically centered within the button */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100px; /* **Fixed height to compensate for text wrapping** */
+    text-align: center;
+}
+
 .call-button:hover {
     background-color: #004d40;
 }
@@ -540,133 +562,197 @@ footer p {
     background-color: #004d40;
 }
 
-/* 22. Coming Soon Page Styles */
-.coming-soon-hero {
-    text-align: center;
-    padding: 100px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    min-height: 70vh; /* Ensures it fills most of the screen vertically */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* 22. Styling Navigation Links as Buttons */
+nav a:not(:first-child) { /* This targets all <a> links EXCEPT the first one */
+    background-color: #00796b; /* Teal background */
+    color: white; /* White text */
+    padding: 8px 15px; /* Adds padding to create the button shape */
+    border-radius: 5px;
+    text-decoration: none; /* Ensure no underline */
+    transition: background-color 0.3s; /* Smooth hover closer */
+
+
+    /* Margin override to group them slightly closer */
+    margin-left: 10px;
 }
 
-.coming-soon-h1 {
-    color: #004d40;
-    font-size: 44px;
-    margin-bottom: 10px;
+/* Hover effect for the new 'buttons' */
+nav a:not(:first-child):hover {
+    background-color: #004d40; /* Darkens on hover */
 }
 
-.coming-soon-h2 {
-    color: #00796b;
-    font-size: 28px;
-    margin-bottom: 30px;
+/* 23. Styling Foot Image (Logo) */
+footer .hero-image {
+    display: block;
+    max-width: 200px; /* **Small, controlled size** */
+    margin: 0 auto 15px auto; /* Centers the image and adds space below it */
 }
 
-.coming-soon-contact {
-    margin-top: 30px;
-    font-weight: bold;
-    font-size: 18px;
+footer .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; /* Keeps the professional look */
 }
 
-/* 23. Email Signup Form Styles ***TEMPORARY*** */
-.email-signup-form {
-    display: flex; /* Aligns input and button horizontally */
-    justify-content: center; /* Centers the form horizontally */
-    gap: 10px; /* Space between input field and button */
-    margin-top: 20px;
-    max-width: 500px; /* Keeps the form from being too wide */
+/* 24. Footer Navigation Styling (Buttons) */
+
+.footer-nav {
+    display: flex; /* **Enables horizontal alignment** */
+    justify-content: center; /* **CRITICAL: Evenly spaces the buttons** */
+    margin-top: 15px; 
+    margin-bottom: 10px; /* Space above copyright */
+    max-width: 600px; /* Controls link group width */
     margin-left: auto;
     margin-right: auto;
 }
 
-.email-signup-form input[type="email"] {
-    flex: 1; /* Allows the input field to take up available space */
-    padding: 10px;
-    border: 1px solid #ccc;
+.footer-nav .nav-button {
+    background-color: #00796b; /* Teal background */
+    color: white;
+    padding: 8px 12px; /* Button padding */
     border-radius: 5px;
-    font-size: 16px;
-    max-width: 300px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin: 0 5px; /* **Small space between buttons** */
+    width: 125px; /* Use a fixed width (adjust this number slightly if needed) */
+    text-align: center; /* Centers the shorter text (Home, Services) */
+    display: block; /* Ensures the fixed width is applied correctly */
 }
 
-/* Ensure the button looks correct inside the form (you can reuse the .submit-button style) */
-.email-signup-form .submit-button {
-    width: auto; /* Overrides the previous 100% width rule */
-    flex-shrink: 0; /* Prevents the button from shrinking too much */
-    padding: 10px 15px; /* Adjust button padding */
-    font-size: 16px;
-    margin-top: 0; /* Remove top margin from the button */
+.footer-nav .nav-button:hover {
+    background-color: #004d40;
+}
+
+/* 25. Sytling the Button Group in the header */
+.nav-button-group a.nav-button { 
+    /* Targets any <a> tag that has the class .nav-button inside the .nav-button-group */
+    background-color: #00796b !important; /* Force background color */
+    color: white !important;
+    padding: 8px 12px !important;
+    border-radius: 5px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    transition: background-color 0.3s;
+}
+
+.nav-button-group a.nav-button:hover {
+    background-color: #004d40 !important;
+}
+
+/* 26. Styling for New Language Bar Container */
+.language-bar {
+    text-align: right; /* Pushes the content to the right */
+    padding: 5px 20px 0 0; /* Adds a little space at the top right */
+}
+
+/* Style the language link itself */
+.language-switch {
+    font-size: 14px;
+    color: #00D5AA; /* A distinct color for the switch */
+    text-decoration: underline;
+}
+
+.language-switch:hover {
+    color: white;
 }
 
 
 
-/*** SECTION START FOR MOBILE FIXES ***/
+/* --- Mobile and Tablet Fixes (Start of all overrides) --- */
 
-/* Fixes Doctor Bio Flow on Mobile */
+/* Targets everything from tablet size down */
 @media (max-width: 768px) { 
-    /* Force the image to stop floating and become a full block */ 
+    /* 1. Doctor Bio Fix (for medium screens) */
     .doctor-profile {
-        text-align: center !important; /* Force center align */
-    }  
-
-    /* Target the image specifically */
-.doctor-profile img {
-    float: none !important; 
-    margin: 0 auto 20px auto !important; /* Center the image and add space below it */
-    display: block !important;
-}
-
-
-/* Remove the after float fix for mobile */
-.doctor-profile::after {
-    content: none !important;
-}
-
-}
-
-/* Fixes Services Grid on Mobile */
-@media (max-width: 768px) {
+        text-align: center !important;
+    }
+    .doctor-profile img {
+        float: none !important; 
+        margin: 0 auto 20px auto !important;
+        display: block !important;
+    }
+    .doctor-profile::after {
+        content: none !important;
+    }
+    
+    /* 2. Services Grid Fix (for medium screens) */
     .service-list {
-        /* Override the multi-column grid with a single column */
-        grid-template-columns: 1fr !important; /* Forces one column only */
-        padding: 0 15px; /* Add some padding on the sides */
+        grid-template-columns: 1fr !important; /* Force single column */
+        padding: 0 15px;
     }
-}
 
-
-/* Fixes Header Navigation on Mobile */
-
-nav a:first-child {
-    font-size: 22px !important; /* **Makes the logo/name bigger than the links** */
-    font-weight: bold !important; /* **Makes it stand out** */
-    margin-right: auto; /* Pushes the other links to the right on desktop */
-    padding-bottom: 5px; /* Adds a little vertical separation line */
-    border-bottom: 2px solid white; /* Subtle white line underneath for emphasis */
-}
-
-@media (max-width: 768px) {
+    /* 3. Header Navigation (for all mobile sizes, forcing stack) */
     nav {
+        flex-direction: column !important; /* Stacks links and logo */
+        align-items: center !important;
+        padding: 10px 20px !important;
+        text-align: center !important;
+    }
+    
+    /* 4. Fix the Clinic Name: Remove the desktop push */
+    nav a:first-child {
+        margin: 10px auto !important; /* Centers the name link */
+        margin-right: 0 !important; /* CRITICAL: Kills the desktop push */
+        border-bottom: none !important; 
+        padding-bottom: 0 !important;
+        text-align: center;
+    }
+    
+    /* 5. Force the Button Group to stack and take full width (TINY PHONE FIX) */
+    .nav-button-group {
         flex-direction: column !important;
-        align-items: flex-start !important;
-        padding: 10px 20px;
+        width: 100% !important; 
+        margin: 10px auto 10px auto !important;
     }
 
-    nav a {
-    margin: 5px 0 !important;
-    font-size: 14px !important;
+    /* 6. Force each individual button to be a full-width block */
+    .nav-button-group a {
+        width: 100% !important;
+        padding: 12px 10px !important; 
+        font-size: 14px !important;
+        text-align: center !important;
+        margin: 5px auto !important; 
+        display: block !important;
+    }
 }
 
-    nav a:first-child {
-        margin-right: 0 !important; /* **CRITICAL: Stops the auto-push on mobile** */
-        border-bottom: none; /* Removes the distracting white line on mobile */
-        margin-bottom: 15px !important;
-        padding-bottom: 0 !important;
+/* Fixes Footer Navigation on Mobile */
+@media (max-width: 500px) {
+
+    /* 1. Force the footer navigation links to stack */
+    .footer-nav {
+        flex-direction: column !important; /* Forces vertical stack */
+        width: 100%; /* Allows the container to fill the footer space */
+        align-items: center !important; /* Centers the whole block of buttons */
+        margin-bottom: 20px;
     }
 
+    /* 2. Force the individual buttons to be full-width blocks */
+    .footer-nav .nav-button {
+        width: 90% !important; /* Ensures the buttons fill the available space */
+        margin: 5px auto !important; /* Keeps the margin around them */
+        text-align: center !important;
+    }
+}
 
+/* Fixes Call/Book Buttons in the Contact Page Hero */
+@media (max-width: 600px) {
+    .action-buttons {
+        flex-direction: column !important; 
+        gap: 15px !important;
+        padding: 0 20px; /* Add padding to prevent buttons from hitting screen edges */
+    }
+
+    .call-button, 
+    .action-buttons .submit-button {
+        width: 100% !important; 
+        padding: 12px 10px;
+        font-size: 18px; /* Use a slightly larger size for readability */
+        text-align: center !important; /* **CRITICAL: Center the text inside the button** */
+        /* Ensure the height is flexible */
+        height: auto; 
+    }
 }
 
 /*** SECTION END FOR MOBILE FIXES ***/
-
-

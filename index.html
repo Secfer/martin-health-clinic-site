@@ -7,25 +7,120 @@
     <link rel="stylesheet" href="style.css"> </head>
 
 <body>
-    <div class="coming-soon-hero">
-        <h1 class="coming-soon-h1">Martin Health Clinic is Launching Soon!</h1>
-        <h2 class="coming-soon-h2">Expert Mobile Wound Care in Las Vegas, Starting in 2026.</h2>
-        <p>We are finalizing our accreditation and will be accepting appointments shortly.</p>
+    <header>
+        <nav>
+            <a href="index.html">Martin Healthcare Clinic</a>
+            
+            <div class="nav-button-group">
+                <a href="index.html" class="nav-button">Home</a>
+                
+                <a href="services.html" class="nav-button">Services</a>
+                <a href="contact.html" class="nav-button">Contact & Booking</a>
+                </div>  
+        </nav>
 
-        <form name="launch-signup" method="POST" data-netlify="true" class="email-signup-form">
-        <input type="email" name="email" placeholder="Enter your email for launch updates" required>
-        <input type="checkbox" name="bot-field" style="display: none;">
-        <button type="submit" class="submit-button">Sign Up for Launch Updates</button> 
-    </form>
+        <div class="language-bar">
+        <a href="es/index.html" class="language-switch">Español</a> 
+        </div>
 
-    <p class="coming-soon-contact">For Urgent Inquiries, please call: (551) 273-9921</p>
-</div>
+    </header>
+
+    <section id="hero">
+        <div class="hero content">
+            <h1>Expert Wound Care, Delivered to Your Home.</h1>
+            <p>Specialized, compassionate wound care for chronic and complex wounds, provided in the comfort and convenience of the patient's home.</p>
+            <button id="openModalBtn">Book Your Appointment Today</button>
+        </div>
         
-    
+    </section>
+
+    <section id="about">
+        <h2>Meet Dr. Martin, FNP</h2>
+        <div class="doctor-profile">
+            <img src="images/doctor-profile.jpg" alt="Professional headshot of Dr. Martin, Wound Care Specialist">
+            
+            <p>Dr. Martin is a highly experienced Family Nurse Practitioner (FNP) whose clinical approach is built on a rare and powerful foundation: <strong>two decades of high-level surgical expertise</strong> combined with compassionate, patient-centered nursing care.</p>
+            
+            <p>His primary goal is to significantly improve his patients' quality of life through meticulous, evidence-based wound management, delivered right to your home.</p>
+
+            <p class="highlight-text">Why his background matters for Wound Care: His advanced residency in neurosurgery provides unparalleled insight into complex physiology and surgical healing principles—an invaluable advantage when treating non-healing and chronic wounds.</p>
+
+            <div class="credentials">
+                <h3>Credentials & Expertise:</h3>
+                <ul>
+                    <li>Family Nurse Practitioner (FNP) - Graduate of Miami Regional University (2023)</li>
+                    <li>General Practitioner & Neurosurgeon - Graduated from the University of Medical Sciences of Havana (2006)</li>
+                    <li>Over 20 years of clinical experience, including specialized surgical training</li>
+                    <li>Extensive experience in high-acuity settings (e.g., Spring Valley Hospital, Horizon Specialty Hospital)</li>
+                    <li>Dedicated to mobile, personalized, and compassionate patient care</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="hero-image">
+            <img src="images/hero-illustration.jpg" alt="compassionate in-home wound care services.">
+        </div>    
+        <nav class="footer-nav">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="services.html" class="nav-button">Services</a>
+            <a href="contact.html" class="nav-button">Contact & Booking</a>
+        </nav>    
+        <p>&copy; 2025 Martin Healthcare Clinic. All rights reserved.</p>
+    </footer>
+
+    <div id="bookingModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Request Your In-Home Appointment</h2>
+            <p>Please fill out the form below. We will call you to confirm your visit details.</p>
+
+            <form name="modal-request" method="POST" data-netlify="true">
+                <input type="checkbox" name="bot-field" style="display: none;">
+                
+                <label for="name">Full Name <span class="required-star">*</span></label>
+                <input type="text" name="name" required>
+
+                <label for="phone">Phone Number <span class="required-star">*</span></label>
+                <input type="tel" name="phone" required>
+
+                <label for="address">Full Address for Visit <span class="required-star">*</span></label>
+                <input type="text" name="address" required>
+
+                <label for="purpose">Brief Reason for Visit (Optional)</label>
+                <textarea name="purpose"></textarea>
+
+                <button type="submit" class="submit-button">Submit Appointment Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("bookingModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModalBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close-btn")[0];
+        
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block"
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        
+    </script>
 </body>
 
     
 
 </html>
-
-
