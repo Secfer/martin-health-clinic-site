@@ -81,16 +81,28 @@
                 <input type="checkbox" name="bot-field" style="display: none;">
                 
                 <label for="name">Full Name <span class="required-star">*</span></label>
-                <input type="text" name="name" required>
+                <input 
+                    type="text" 
+                    name="name" 
+                    pattern="[A-Za-z\s]+" 
+                    title="Please use only letters and spaces."
+                    required>
 
                 <label for="phone">Phone Number <span class="required-star">*</span></label>
-                <input type="tel" name="phone" required>
+                <input 
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholders="7025550123"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required>
 
                 <label for="address">Full Address for Visit <span class="required-star">*</span></label>
                 <input type="text" name="address" required>
 
                 <label for="purpose">Brief Reason for Visit (Optional)</label>
-                <textarea name="purpose"></textarea>
+                <textarea name="purpose" maxlength="500" placeholder="Describe your needs briefly..."></textarea>
 
                 <button type="submit" class="submit-button">Submit Appointment Request</button>
             </form>
@@ -116,6 +128,16 @@
         span.onclick = function() {
             modal.style.display = "none";
         }
+
+        // This targets the phone input specifically
+  const phoneInput = document.getElementById('phone');
+  
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function (e) {
+      // Hard-replaces any non-number character with nothing
+      e.target.value = e.target.value.replace(/\D/g, '');
+    });
+  }
         
         
     </script>
