@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact & Appointment Booking | Marting Healthcare Clinic</title>
-    <link rel="stylesheet" href="../style.css"> </head>
+    <title>Contacto y Reserva de Citas | Clínica Martin Healthcare</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
 
 <body>
     <header>
@@ -13,17 +14,14 @@
             
             <div class="nav-button-group">
                 <a href="index.html" class="nav-button">Inicio</a>
-                
                 <a href="services.html" class="nav-button">Servicios</a>
-                <a href="contact.html" class="nav-button">Contacto y Citas</a>
+                <a href="contact.html" class="nav-button active">Contacto y Citas</a>
             </div>
         </nav>
 
-
         <div class="language-bar">
-        <a href="../contact.html" class="language-switch">English</a> 
+            <a href="../contact.html" class="language-switch">English</a> 
         </div>
-  
     </header>
 
     <section id="hero">
@@ -39,16 +37,15 @@
                 Reservar cita
             </button>
         </div>
-
     </section>
 
     <section id="about">
         <h2>Ubicación y horario de la clínica</h2>
-        <p>Nuestro equipo especializado está listo para ayudarte en tu camino hacia la curación.</p>
+        <p>Nuestro equipo especializado está listo para ayudarle en su camino hacia la curación.</p>
         <div class="contact-info">
             <div class="info-card">
                 <h3>Área de servicio</h3>
-                <img src="../images/las-vegas-map.jpg" alt="Map of Las Vegas service area" class="service-area-map">    
+                <img src="../images/las-vegas-map.jpg" alt="Mapa del área de servicio en Las Vegas" class="service-area-map">    
 
                 <div class="service-area-text">   
                     <p>Prestamos servicio a las ciudades de <strong>Las Vegas y Henderson, en Nevada.</strong></p>
@@ -58,98 +55,97 @@
 
             <div class="info-card">
                 <h3><strong>Horario de atención para programar citas</strong></h3>
-                <p>Puede comunicarse con el Sr. Marting por teléfono durante el siguiente horario:</p>
+                <p>Puede comunicarse con el Sr. Martin por teléfono durante el siguiente horario:</p>
 
-                <ul class="hours list">
-                    <li><strong>Martes-Miércoles:</strong> En cualquier momento (24 horas)</li>
+                <ul class="hours-list">
+                    <li><strong>Lunes a miércoles:</strong> En cualquier momento (24 horas)</li>
                     <li><strong>Jueves a domingo:</strong> Después de las 6:00 p. m. PDT</li>
                 </ul>
-                <p>Las visitas se programan de forma individualizada para cada paciente.</P>
+                <p>Las visitas se programan de forma individualizada para cada paciente.</p>
             </div>
         </div>     
     </section>
 
     <footer>
         <div class="hero-image">
-            <img src="../images/hero-illustration.jpg" alt="compassionate in-home wound care services.">
+            <img src="../images/hero-illustration.jpg" alt="Servicios compasivos de cuidado de heridas a domicilio.">
         </div>    
         <nav class="footer-nav">
             <a href="index.html" class="nav-button">Inicio</a>
             <a href="services.html" class="nav-button">Servicios</a>
-            <a href="contact.html" class="nav-button">Contacto y reservas</a>
-        </nav>    
-        <p>&copy; 2025 Martin Healthcare Clinic. Todos los derechos reservados.</p>
+            <a href="contact.html" class="nav-button active">Contacto y Citas</a>
+        </nav> 
+        <p>&copy; 2026 Martin Healthcare Clinic. Todos los derechos reservados.</p>
     </footer>
 
     <div id="bookingModal" class="modal">
-
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2>Solicite su cita a domicilio</h2>
             <p>Rellene el siguiente formulario. Le llamaremos para confirmar los detalles de su visita.</p>
 
-           <form name="modal-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
-    <input type="hidden" name="form-name" value="modal-request">
-    <div style="position: absolute; left: -9999px;" aria-hidden="true">
-        <label>No llene esto si es humano: <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
-    </div>
-    
-    <label for="name">Nombre completo <span class="required-star">*</span></label>
-    <input 
-        type="text" 
-        name="name" 
-        pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" 
-        title="Por favor, use solo letras y espacios."
-        required>
+            <form name="modal-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+                <input type="hidden" name="form-name" value="modal-request">
+                <div style="position: absolute; left: -9999px;" aria-hidden="true">
+                    <label>No llene esto si es humano: <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+                </div>
+                
+                <label for="name">Nombre completo <span class="required-star">*</span></label>
+                <input 
+                    type="text" 
+                    name="name" 
+                    pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" 
+                    title="Por favor, use solo letras y espacios."
+                    required>
 
-    <label for="phone">Número de teléfono <span class="required-star">*</span></label>
-    <input 
-        type="tel"
-        id="phone"
-        name="phone"
-        placeholder="7025550123"
-        pattern="[0-9]{10}"
-        maxlength="10"
-        required>
+                <label for="phone">Número de teléfono <span class="required-star">*</span></label>
+                <input 
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="7025550123"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required>
 
-    <label for="address">Dirección completa para la visita <span class="required-star">*</span></label>
-    <input type="text" name="address" required>
+                <label for="address">Dirección completa para la visita <span class="required-star">*</span></label>
+                <input type="text" name="address" required>
 
-    <label for="purpose">Breve motivo de la visita (opcional)</label>
-    <textarea name="purpose" maxlength="500" placeholder="Describa sus necesidades brevemente..."></textarea>
+                <label for="purpose">Breve motivo de la visita (opcional)</label>
+                <textarea name="purpose" maxlength="500" placeholder="Describa sus necesidades brevemente..."></textarea>
 
-    <div data-netlify-recaptcha="true"></div>
+                <div data-netlify-recaptcha="true"></div>
 
-    <button type="submit" class="submit-button">Enviar solicitud de cita</button>
-</form>
+                <button type="submit" class="submit-button">Enviar solicitud de cita</button>
+            </form>
         </div>
     </div>
 
     <script>
-        // Get the modal
         var modal = document.getElementById("bookingModal");
-
-        // Get the button that opens the modal
         var btn = document.getElementById("openModalBtn");
-
-        // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close-btn")[0];
         
-        // When the user clicks the button, open the modal
         btn.onclick = function() {
-            modal.style.display = "block"
+            modal.style.display = "block";
         }
 
-        // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
             modal.style.display = "none";
         }
-        
-        
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        const phoneInput = document.getElementById('phone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function (e) {
+                e.target.value = e.target.value.replace(/\D/g, '');
+            });
+        }
     </script>
-
 </body>
-
-    
-
 </html>
