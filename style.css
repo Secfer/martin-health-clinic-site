@@ -1,123 +1,138 @@
 /* 1. Reset: Cleans up default browser styling */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif; /* A clean, professional font */
+    font-family: Arial, sans-serif;
 }
 
 /* 2. Body: Sets the background color for the whole page */
 body {
-    background-color: #f4f4f4; /* Light grey background */
-    color: #333; /* Dark text color for readability */
-    line-height: 1.7; /*INCREASES SPACE BETWEEN LINES for better flow */
-    font-size: 16.5px; /* Slight increase in base font size */
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.7;
+    font-size: 16.5px;
 }
 
-/* 3. Header/Navigation Bar Styling */
+/* 3. Header / Navigation Bar Styling */
 header {
-    background-color: #004d40; /* A dark teal/green for a professional, calming look */
+    background-color: #004d40;
     padding: 20px 0;
 }
 
 nav {
-    display: flex; /* Enables flexible alignment */
-    align-items: center; /* Vertically centers items */
-    justify-content: space-between; /* **CRITICAL: Pushes items to opposite edges** */
-    max-width: 1100px; /* Maintains center alignment on desktop */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-nav a {
-    color: white; /* White text for links */
-    text-decoration: none; /* Removes the ugly underline */
-    margin-left: 20px;
+/* Clinic Name Brand Link */
+nav > a:first-child {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    margin-right: auto;
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+    transition: opacity 0.3s;
+}
+
+nav > a:first-child:hover {
+    opacity: 0.8;
+}
+
+/* Header Navigation Button Group */
+.nav-button-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-button-group a.nav-button {
+    background-color: #00796b;
+    color: white;
+    padding: 9px 16px;
+    border-radius: 5px;
+    text-decoration: none;
     font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s; /* Smooth color change on hover */
+    font-size: 15px;
+    white-space: nowrap;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* Making the first link (Company Name) bigger/more prominent */
-nav a:first-child {
-font-size: 24px; /* Significantly larger than menu links */
-    font-weight: 700; /* Extra bold text */
-    color: white; /* Ensures text is white */
-    text-decoration: none; /* Removes the underline */
-    margin-right: auto; /* Pushes the buttons to the right */
-    padding-bottom: 5px; /* Adds space for the line */
-    border-bottom: 2px solid white; /* Subtle white line underneath for emphasis */
-    transition: opacity 0.3s; /* Smooth transition on hover */
+.nav-button-group a.nav-button:hover {
+    background-color: #003d33;
 }
 
-nav a:first-child:hover {
-    opacity: 0.8; /* Slight dim on hover */
+/* Language Switch Bar */
+.language-bar {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: right;
+    padding: 8px 20px 0 20px;
+}
+
+.language-switch {
+    font-size: 14px;
+    color: #00D5AA;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.language-switch:hover {
+    color: white;
 }
 
 /* 4. Hero Section Styling */
 #hero {
     background-color: #e8f5e9;
-    padding: 50px 0;
-    text-align: left; /* Keep text aligned to left fore hero-content */
-    
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 40px 25px;
+    border-radius: 8px;
+    text-align: center;
 }
 
 #hero h1 {
     font-size: 38px;
-    color: #004d40; /* Matchiing the header color */
+    color: #004d40;
     margin-bottom: 15px;
 }
 
 #hero p {
     font-size: 18px;
-    margin-bottom: 25px;
+    max-width: 750px;
+    margin: 0 auto 25px auto;
 }
 
-/*Styling the button */
 #hero button {
-    background-color: #00796b; /* A slightly brighter teal for the button */
+    background-color: #00796b;
     color: white;
     padding: 15px 30px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px; 
+    font-size: 18px;
     font-weight: bold;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    transition: background-color 0.3s;
 }
 
-
-
-/* Adjust text/button content width */
-.hero-content {
-    flex: 1.5; /* Allows this content to grow and shrink */
-    min-width: 300px; /* Ensures it doesn't get too small */
-    max-width: 600px; /* Prevents it from getting too wide on large screens */
-    text-align: left; /* Ensure text is left aligned within its div */
-}
-
-/* Style for the image container and the image itself */
-.hero-image {
-    flex: 0.5; /* Allows the image to grow and shrink */
-    min-width: 250px; /* Ensures it doesn't get too small */
-    max-width: 400px; /* Max Width for the image */
-    display: flex; /* Use flex to center image if it is smaller */
-    justify-content: center; /* Center image withing its container */
-}
-
-.hero-image img {
-    max-width: 100%; /* ensure image doesn't overflow its container */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Consistent rounder corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-
-/*New Hover effect for the button */
 #hero button:hover {
-    background-color: #004d40; /* Darkens to the main header color */
+    background-color: #004d40;
 }
 
-/* 5. General Section Styling - Centers and standardizes padding */
+.hero-content {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 5. General Section Styling */
 section {
     max-width: 1100px;
     margin: 50px auto;
@@ -130,55 +145,43 @@ section h2 {
     margin-bottom: 20px;
 }
 
-/* 6. Footer Syling */
-footer {
-    background-color: #333; /*Dark Background for footer */
-    color: white; 
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
-}
-
-/* OPTIONAL: Ensure the links are displayed in a block above the copyright */
-.footer-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px; /* Space between links */
-    font-weight: normal;
-    display: inline-block; /* Allows margins to work horizontally */
-    padding: 5px 0 10px 0; /* Creates space between links and copyright */
-}
-
-.footer-nav {
-    display: block;
-    margin: 0 auto;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    max-width: 600px; /*Limits the width of the link block to ensure centering */
-}
-
-.footer-nav a:hover {
-    text-decoration: underline;
-}
-
-footer p {
-    margin-top: 10px; /* Space above the copyright text */
-    font-size: 14px;
-    opacity: 0.8; /* Slightly grayed out for minor text */
-}
-
-
-/* 7. Doctor Profile Styling */
-.doctor-profile p{
-    line-height: 1.6; /* Improves readability of long paragraphs */
+/* 6. Doctor Profile Styling */
+.doctor-profile p {
+    line-height: 1.6;
     margin-bottom: 20px;
     font-size: 17px;
 }
 
+.doctor-profile img {
+    float: left;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    border: 5px solid #e8f6e9;
+}
+
+.doctor-profile::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.highlight-text {
+    font-style: italic;
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-left: 4px solid #00796b;
+    margin: 25px 0;
+    line-height: 1.6;
+}
+
 .credentials {
-    background-color: #e8f5e9; /* Light, calming green background */
+    background-color: #e8f5e9;
     padding: 25px;
-    border-left: 5px solid #004d40; /* A strong visual line */
+    border-left: 5px solid #004d40;
 }
 
 .credentials h3 {
@@ -187,18 +190,40 @@ footer p {
 }
 
 .credentials ul {
-    list-style: none; /* Removes the default bullet points */
+    list-style: none;
 }
 
 .credentials li {
-    padding: 5px 0;
-    border-bottom: 1px dotted #ccc; /* Subtle separation for list items */
+    padding: 6px 0;
+    border-bottom: 1px dotted #ccc;
 }
 
-/* 8. Services Page Specific Styling - 2x2 Balanced Grid */
+/* 7. Services Page Specific Styling - 2x2 Balanced Grid */
+.service-hero-title {
+    font-size: 38px;
+    color: #004d40;
+    margin-bottom: 10px;
+}
+
+.service-hero-subtitle {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.section-intro {
+    font-size: 18px;
+    font-style: italic;
+    color: #4a4a4a;
+    max-width: 800px;
+    margin: 15px auto 40px auto;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px dashed #ccc;
+}
+
 .service-list {
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); /* Clean 2x2 grid on desktop */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-top: 30px;
     max-width: 1000px;
@@ -210,7 +235,7 @@ footer p {
     background-color: white;
     padding: 35px 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Fixed rgva -> rgba */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
@@ -247,32 +272,27 @@ footer p {
     margin-bottom: 0;
 }
 
-/* 9. Contact Page Specific Styling */
-
-/* Use Flexbox to put the Service Area and Hours side-by-side on larger screens */
+/* 8. Contact Page Specific Styling */
 .contact-info {
-    display: flex; 
-    flex-wrap: wrap; /* Allows cards to wrap on smaler screens */
-    justify-content: space-between; /* Centers cards if there is extra space */
-    gap: 30px; /* Space between the two blocks */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
     margin-top: 30px;
-    max-width: 1100px; /* Restricts overall width of the card section */
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 20px; /* Add osme horizontal padding */
 }
 
 .info-card {
     background-color: white;
     padding: 30px;
-    border-radius: 8px; /* Slightly rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Very subtle shadow for depth */
-    flex: 1 1 45%; /* Takes up 45% of the space, allowing 5% for the gap */
-    min-width: 280px; /* Minimum width before wrapping */
-    max-width: 500px; /* Max Width for each card */
-    text-align: left; /* Keep text aligned left withing card */
-    
-    
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    flex: 1 1 45%;
+    min-width: 280px;
+    max-width: 520px;
+    text-align: left;
 }
 
 .info-card h3 {
@@ -283,66 +303,77 @@ footer p {
     padding-bottom: 5px;
 }
 
-/* 10. Styling for Prominent Introductory Text (Section Subtitle in Services page) */
-.section-intro {
-    font-size: 18px; /*Slightly larger text */
-    font-style: italic; /*Gives it a distict, pull-quote look */
-    color: #4a4a4a; /* A medium gray, slightly softer than the heading */
-    max-width: 800px; /* Keeps the lines short for readability */
-    margin: 15px auto 40px auto; /* Adds significant space above/below to separate it */
-    text-align: center; /* Centers the text under the heading */
-    padding: 15px 0;
-    border-bottom: 1px dashed #ccc; /*Subtle separation line */
+.service-area-map {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 11. Doctor Profile Image Styling */
-.doctor-profile img {
-    float: left; /* Makes the image sit on the left and wraps text around it */
-    width: 250px; /* Sets a fixed width for a neat professional size */
-    height: 250px; /* Optional: Keep the height and width the same for a perfect square */
-    object-fit: cover; /* Ensures the image fills the ara without being stretched */
-    border-radius: 50%; /* Makes the image perfectly round for a modern look */
-    margin-right: 30px; /* Adds space between the image and the text */
-    margin-bottom: 20px;
-    border: 5px solid #e8f6e9; /* Light border matching the background color */
+.hours-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0 15px 0;
+    line-height: 1.6;
 }
 
-/* Clear the float so the footer doesn't get pulled up */
-.doctor-profile::after {
-    content: "";
-    display: table;
-    clear: both;
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-/* 12. Full-Width Banner Image Styling */
-.banner-image {
-    width: 100%; /* Makes the image span the entire content width */
-    max-height: 350px; /* Limits the hieght for a banner effect */
-    object-fit: cover; /* Ensures the image looks good without distorting */
-    border-radius: 8px; /* Matches the rounded corners of your cards */
-    margin-bottom: 40px; /* Adds space below the image */
+.call-button {
+    background-color: #00796b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-/* 13. MODAL (POP-UP) STYLING */
+.action-buttons .call-button,
+.action-buttons .submit-button {
+    flex: 1;
+    max-width: 250px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 68px;
+    padding: 12px 20px;
+    text-align: center;
+    line-height: 1.3;
+}
 
+.call-button:hover {
+    background-color: #004d40;
+}
+
+/* 9. Modal (Pop-Up) Styling */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 100; /* Sit on top of everything */
+    display: none;
+    position: fixed;
+    z-index: 100;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity - The background overlay */   
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.45);
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto; /* 10% from the top and centered horizontally */
+    margin: 8% auto;
     padding: 30px;
     border: 1px solid #888;
-    width: 90%; /* Could be more or less, depending on screen size */
+    width: 90%;
     max-width: 500px;
     border-radius: 10px;
     position: relative;
@@ -354,10 +385,8 @@ footer p {
     font-size: 28px;
 }
 
-/* The Close Button */
 .close-btn {
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
     position: absolute;
@@ -370,17 +399,26 @@ footer p {
 .close-btn:focus {
     color: #000;
     text-decoration: none;
-    cursor: pointer;
 }
 
-/* Style the form elements inside the modal */
 .modal-content label {
     display: block;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 12px;
     margin-bottom: 5px;
     color: #004d40;
     font-size: 14px;
+}
+
+.modal-content label span {
+    font-weight: normal;
+    color: #555;
+}
+
+.required-star {
+    color: red !important;
+    font-weight: bold !important;
+    font-size: 1.1em;
 }
 
 .modal-content input[type="text"],
@@ -391,16 +429,10 @@ footer p {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    box-sizing: border-box;
 }
 
-.modal-content .submit-button {
-    width: 100%;
-}
-
-/* Submit button customization */
 .submit-button {
-    background-color: #00796b; /* The brighter teal color */
+    background-color: #00796b;
     color: white;
     padding: 15px 30px;
     border: none;
@@ -408,163 +440,18 @@ footer p {
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
-    margin-top: 25px;
+    margin-top: 20px;
     width: 100%;
     transition: background-color 0.3s;
 }
 
 .submit-button:hover {
-    background-color: #004d40; /* Darker teal for hover effect */
-}
-
-/* 14 Styling the required asterisk */
-.required-star {
-    color:red !important; /* A standard, noticeable red color */
-    font-weight: bold;
-    font-size: 1.1em; /* Makes the asterisk slightly larger than the text */
-}
-
-/* Optional: Ensure the (Optional) text is clear but not aggressive */
-.modal-content label span {
-    font-weight: normal;
-    color: #555;
-}
-
-/* 16. Styling for Bio Highlight */
-.highlight-text {
-    font-style: italic;
-    background-color: #e8f5e9; /* Light green background */
-    padding: 15px;
-    border-left: 4px solid #00796b; /* Teal accent bar */
-    margin: 25px 0;
-    line-height: 1.6;
-}
-
-
-/* 18. New Service Page Hero Adjustments */
-.service-hero-title {
-    font-size: 38px; /* Slightly smaller than the <h1> on the homepage */
-    color: #004d40;
-    margin-bottom: 10px; 
-}
-
-.service-hero-subtitle {
-    font-size: 18px;
-    margin-bottom: 30px; /* Space between text and button */
-}
-
-/* Reduce the padding on the main #hero container on this page */
-#hero {
-    max-width: 1100px;
-    margin: 30px auto; /* Reduced vertical margin */
-    padding: 20px 20px; /* Reduced vertical padding */
-    text-align: center;
-}
-
-.service-grid-wrapper {
-    margin-top: 50px; /* Separates the grid from the button */
-}
-
-.service-grid-wrapper h2 {
-    font-size: 32px;
-    color: #004d40;
-    margin-bottom: 10px;
-}
-
-
-/* 19 Styling for Service Area Map on Contact Page */
-.service-area-map {
-    max-width: 100%; /* Ensures the image does not overflow the card */
-    height: auto; /* Maintains aspect ratio */
-    border-radius: 8px; /* Matches card border-radius */
-    margin-bottom: 15px; /* Adds space below the image */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-/* 20 Sytling for Office Hours */
-.hours-list {
-    list-style: none; /* Removes default bullet points */
-    padding-left: 0;
-    margin: 10px 0 15px 0;
-}
-
-.hours-list {
-    margin-bottom: 5px;
-    line-height: 1.4;
-}
-
-
-/* 21 Sytling for Side-by-Side action buttons */
-.action-buttons {
-    display: flex;  /* Alings items horizontally */
-    justify-content: center; /* Centers the button group on the page */
-    gap: 20px; /* Space between the two groups */
-    margin-top: 25px;
-    flex-direction: row; 
-    flex-wrap: wrap; /* Allows them to stack on very small screens */
-    align-items: center;
-}
-
-/* Style for the Call Button (<a> tag) */
-.call-button {
-    background-color: #00796b;
-    color: white;
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background-color 0.3s; 
-    display: inline-flex;
-    align-items: center;
-}
-
-/* New: Ensure both buttons share equal space and align correctly */
-.action-buttons .call-button,
-.action-buttons .submit-button {
-    flex: 1; /* Allows them to share available space equally */
-    max-width: 250px; /* Limits overall size for a cleaner look */
-    /* CRITICAL: Ensure text is vertically centered within the button */
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    min-height: 68px; /* **Fixed height to compensate for text wrapping** */
-    padding: 12px 20px;
-    text-align: center;
-    line-height: 1.3;
-}
-
-.call-button:hover {
     background-color: #004d40;
 }
 
-.submit-button:hover {
-    background-color: #004d40;
-}
-
-/* 22. Styling Navigation Links as Buttons */
-nav a:not(:first-child) { /* This targets all <a> links EXCEPT the first one */
-    background-color: #00796b; /* Teal background */
-    color: white; /* White text */
-    padding: 8px 15px; /* Adds padding to create the button shape */
-    border-radius: 5px;
-    text-decoration: none; /* Ensure no underline */
-    transition: background-color 0.3s; /* Smooth hover closer */
-
-
-    /* Margin override to group them slightly closer */
-    margin-left: 10px;
-}
-
-/* Hover effect for the new 'buttons' */
-nav a:not(:first-child):hover {
-    background-color: #004d40; /* Darkens on hover */
-}
-
-/* 23. Styling Footer Image (Logo) */
+/* 10. Footer Styling */
 footer {
-    background-color: #1f2421; /* Deep charcoal-teal that blends with the logo */
+    background-color: #1f2421;
     color: white;
     text-align: center;
     padding: 30px 20px;
@@ -580,22 +467,20 @@ footer .hero-image {
 footer .hero-image img {
     width: 100%;
     height: auto;
-    border-radius: 14px; /* Softens the square corners */
+    border-radius: 14px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
 }
 
-/* 24. Footer Navigation Styling (Uniform Buttons) */
 .footer-nav {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;
-    margin: 15px auto 15px auto;
+    margin: 15px auto;
     max-width: 650px;
 }
 
-.footer-nav a,
-.footer-nav .nav-button {
+.footer-nav a.nav-button {
     background-color: #00796b;
     color: white;
     padding: 10px 18px;
@@ -603,170 +488,109 @@ footer .hero-image img {
     text-decoration: none;
     font-weight: bold;
     font-size: 15px;
-    white-space: nowrap; /* Prevents "Contact & Booking" from wrapping onto 2 lines */
-    width: auto;
+    white-space: nowrap;
     min-width: 130px;
     text-align: center;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s;
-    margin: 0;
-}
-
-.footer-nav a:hover,
-.footer-nav .nav-button:hover {
-    background-color: #004d40;
-    text-decoration: none;
-}
-
-/* 25. Styling the Button Group in the Header */
-.nav-button-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.nav-button-group a,
-.nav-button-group a.nav-button { 
-    background-color: #00796b !important;
-    color: white !important;
-    padding: 9px 16px !important;
-    border-radius: 5px !important;
-    text-decoration: none !important;
-    font-weight: bold !important;
-    font-size: 15px !important;
-    white-space: nowrap;
     border: 2px solid transparent;
     transition: background-color 0.3s, border-color 0.3s;
-    margin-left: 0 !important;
 }
 
-.nav-button-group a:hover,
-.nav-button-group a.nav-button:hover {
-    background-color: #004d40 !important;
+.footer-nav a.nav-button:hover {
+    background-color: #003d33;
 }
 
-/* Clean outline indicator for whichever page is currently active */
-.nav-button-group a.active,
-.footer-nav a.active {
+footer p {
+    margin-top: 15px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* 11. Active Page Indicator (Header & Footer) */
+.nav-button-group a.nav-button.active,
+.footer-nav a.nav-button.active {
     background-color: #004d40 !important;
     border: 2px solid #80cbc4 !important;
+    color: #ffffff !important;
 }
 
-/* 26. Styling for New Language Bar Container */
-.language-bar {
-    text-align: right; /* Pushes the content to the right */
-    padding: 5px 20px 0 0; /* Adds a little space at the top right */
-}
-
-/* Style the language link itself */
-.language-switch {
-    font-size: 14px;
-    color: #00D5AA; /* A distinct color for the switch */
-    text-decoration: underline;
-}
-
-.language-switch:hover {
-    color: white;
-}
-
-
-
-/* --- Mobile and Tablet Fixes (Start of all overrides) --- */
-
-/* Targets everything from tablet size down */
-@media (max-width: 768px) { 
-    /* 1. Doctor Bio Fix (for medium screens) */
+/* 12. Mobile and Tablet Responsive Overrides */
+@media (max-width: 768px) {
     .doctor-profile {
-        text-align: center !important;
+        text-align: center;
     }
+
     .doctor-profile img {
-        float: none !important; 
-        margin: 0 auto 20px auto !important;
-        display: block !important;
+        float: none;
+        margin: 0 auto 20px auto;
+        display: block;
     }
+
     .doctor-profile::after {
-        content: none !important;
+        content: none;
     }
-    
-    /* 2. Services Grid Fix (for medium screens) */
+
     .service-list {
-        grid-template-columns: 1fr !important; /* Force single column */
+        grid-template-columns: 1fr;
         padding: 0 15px;
     }
 
-    /* 3. Header Navigation (for all mobile sizes, forcing stack) */
     nav {
-        flex-direction: column !important; /* Stacks links and logo */
-        align-items: center !important;
-        padding: 10px 20px !important;
-        text-align: center !important;
-    }
-    
-    /* 4. Fix the Clinic Name: Remove the desktop push */
-    nav a:first-child {
-        margin: 10px auto !important; /* Centers the name link */
-        margin-right: 0 !important; /* CRITICAL: Kills the desktop push */
-        border-bottom: none !important; 
-        padding-bottom: 0 !important;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
         text-align: center;
     }
-    
-    /* 5. Force the Button Group to stack and take full width (TINY PHONE FIX) */
-    .nav-button-group {
-        flex-direction: column !important;
-        width: 100% !important; 
-        margin: 10px auto 10px auto !important;
+
+    nav > a:first-child {
+        margin: 10px auto;
+        border-bottom: none;
+        padding-bottom: 0;
     }
 
-    /* 6. Force each individual button to be a full-width block */
-    .nav-button-group a {
-        width: 100% !important;
-        padding: 12px 10px !important; 
-        font-size: 14px !important;
-        text-align: center !important;
-        margin: 5px auto !important; 
-        display: block !important;
+    .nav-button-group {
+        flex-direction: column;
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .nav-button-group a.nav-button {
+        width: 100%;
+        padding: 12px 10px;
+        font-size: 15px;
+        text-align: center;
+        display: block;
     }
 }
 
-/* Fixes Footer Navigation on Mobile */
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+    .action-buttons {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+    }
 
-    /* 1. Force the footer navigation links to stack */
+    .action-buttons .call-button,
+    .action-buttons .submit-button {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 56px;
+    }
+}
+
+@media (max-width: 500px) {
     .footer-nav {
-        flex-direction: column !important; /* Forces vertical stack */
-        width: 100%; /* Allows the container to fill the footer space */
-        align-items: center !important; /* Centers the whole block of buttons */
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
         margin-bottom: 20px;
     }
 
-    /* 2. Force the individual buttons to be full-width blocks */
-    .footer-nav .nav-button {
-        width: 90% !important; /* Ensures the buttons fill the available space */
-        margin: 5px auto !important; /* Keeps the margin around them */
-        text-align: center !important;
+    .footer-nav a.nav-button {
+        width: 90%;
+        text-align: center;
     }
 }
-
-/* Fixes Call/Book Buttons in the Contact Page Hero */
-@media (max-width: 600px) {
-    .action-buttons {
-        flex-direction: column !important; 
-        gap: 15px !important;
-        padding: 0 20px; /* Add padding to prevent buttons from hitting screen edges */
-    }
-
-    .call-button, 
-    .action-buttons .submit-button {
-        width: 100% !important; 
-        padding: 12px 10px;
-        font-size: 18px; /* Use a slightly larger size for readability */
-        text-align: center !important; /* **CRITICAL: Center the text inside the button** */
-        /* Ensure the height is flexible */
-        height: auto; 
-    }
-}
-
-/*** SECTION END FOR MOBILE FIXES ***/
