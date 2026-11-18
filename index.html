@@ -78,35 +78,40 @@
             <h2>Request Your In-Home Appointment</h2>
             <p>Please fill out the form below. We will call you to confirm your visit details.</p>
 
-            <form name="modal-request" method="POST" data-netlify="true">
-                <input type="checkbox" name="bot-field" style="display: none;">
-                
-                <label for="name">Full Name <span class="required-star">*</span></label>
-                <input 
-                    type="text" 
-                    name="name" 
-                    pattern="[A-Za-z\s]+" 
-                    title="Please use only letters and spaces."
-                    required>
+            <form name="modal-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+    <input type="hidden" name="form-name" value="modal-request">
+    <div style="position: absolute; left: -9999px;" aria-hidden="true">
+        <label>Don’t fill this out if you’re human: <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+    </div>
+    
+    <label for="name">Full Name <span class="required-star">*</span></label>
+    <input 
+        type="text" 
+        name="name" 
+        pattern="[A-Za-z\s]+" 
+        title="Please use only letters and spaces."
+        required>
 
-                <label for="phone">Phone Number <span class="required-star">*</span></label>
-                <input 
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholders="7025550123"
-                    pattern="[0-9]{10}"
-                    maxlength="10"
-                    required>
+    <label for="phone">Phone Number <span class="required-star">*</span></label>
+    <input 
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="7025550123"
+        pattern="[0-9]{10}"
+        maxlength="10"
+        required>
 
-                <label for="address">Full Address for Visit <span class="required-star">*</span></label>
-                <input type="text" name="address" required>
+    <label for="address">Full Address for Visit <span class="required-star">*</span></label>
+    <input type="text" name="address" required>
 
-                <label for="purpose">Brief Reason for Visit (Optional)</label>
-                <textarea name="purpose" maxlength="500" placeholder="Describe your needs briefly..."></textarea>
+    <label for="purpose">Brief Reason for Visit (Optional)</label>
+    <textarea name="purpose" maxlength="500" placeholder="Describe your needs briefly..."></textarea>
 
-                <button type="submit" class="submit-button">Submit Appointment Request</button>
-            </form>
+    <div data-netlify-recaptcha="true"></div>
+
+    <button type="submit" class="submit-button">Submit Appointment Request</button>
+</form>
         </div>
     </div>
 

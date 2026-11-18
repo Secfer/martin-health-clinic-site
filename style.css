@@ -195,77 +195,56 @@ footer p {
     border-bottom: 1px dotted #ccc; /* Subtle separation for list items */
 }
 
-/* 8. Services Page Specific Syling - Using Grid for Card Layout */
-
-/* Styles the entire block containing services on services.html (GRID CONTAINER)*/
+/* 8. Services Page Specific Styling - 2x2 Balanced Grid */
 .service-list {
     display: grid; 
-    /* Set up a responsive grid: 2 columns if screen is wide, otherwise 1 column */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; /*Adds space between the cards*/
+    grid-template-columns: repeat(2, 1fr); /* Clean 2x2 grid on desktop */
+    gap: 30px;
     margin-top: 30px;
-    max-width: 1100px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Styles the individual cards */
 .service-card {
-    background-color: white; /*White background for clean look */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgva(0, 0, 0, 0.08); /* More noticeable shadow for a "card" feel */
-    transition: transform 0.3s, box-shadow 0.3s; /*Smooth transition for hover */
-
-    /*Layout for Icon/Text */
+    background-color: white;
+    padding: 35px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Fixed rgva -> rgba */
+    transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
-    flex-direction: column; /* Stacks image, title, and text */
-    align-items: center; /* **Centers the items horizontally in the card** */
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 30px;
 }
 
-/* Style fo the samll image/icon inside the card */
 .card-icon {
-    width: 80px;
-    height: 80px;
+    width: 85px;
+    height: 85px;
     margin-bottom: 15px;
     object-fit: cover;
-    border-radius: 50%; /* **Makes the icons round for a clean look** */
-    border: 2px solid #004d40; /* Optional: adds a slighter border */
+    border-radius: 50%;
+    border: 2px solid #004d40;
 }
 
-
-/* Add a subtle interactive touch (optional, but professional) */
-.service-card:hover{
-    transform: translateY(-5px); /* Lifts the card slightly */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .service-card h3 {
-    font-size: 24px;
+    font-size: 22px;
     color: #004d40;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #e0f2f1;
+    padding-bottom: 8px;
+    width: 100%;
 }
 
-.service-card p{
-    font-size: 16.5px;
+.service-card p {
+    font-size: 16px;
     line-height: 1.6;
-}
-
-/* Styles the individual service headings */
-.service-list h3 {
-    font-size: 24px;
-    color: #004d40;
-    margin-bottom: 5px; /* Closer to the paragrapph it belongs to */
-    border-bottom: 2px solid #e0f2f1; /* Subtle line under the heading */
-    padding-bottom: 5px;
-}
-
-/* Styles the paragraph text underneath each service heading */
-.service-list p {
-    font-size: 16.5px;
-    margin-bottom: 20px; /* Adds space after the paragraph */
+    margin-bottom: 0;
 }
 
 /* 9. Contact Page Specific Styling */
@@ -290,7 +269,7 @@ footer p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Very subtle shadow for depth */
     flex: 1 1 45%; /* Takes up 45% of the space, allowing 5% for the gap */
     min-width: 280px; /* Minimum width before wrapping */
-    max-width: 500; /* Max Width for each card */
+    max-width: 500px; /* Max Width for each card */
     text-align: left; /* Keep text aligned left withing card */
     
     
@@ -550,8 +529,10 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center; 
-    height: 100px; /* **Fixed height to compensate for text wrapping** */
+    min-height: 68px; /* **Fixed height to compensate for text wrapping** */
+    padding: 12px 20px;
     text-align: center;
+    line-height: 1.3;
 }
 
 .call-button:hover {
@@ -581,63 +562,96 @@ nav a:not(:first-child):hover {
     background-color: #004d40; /* Darkens on hover */
 }
 
-/* 23. Styling Foot Image (Logo) */
+/* 23. Styling Footer Image (Logo) */
+footer {
+    background-color: #1f2421; /* Deep charcoal-teal that blends with the logo */
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+
 footer .hero-image {
     display: block;
-    max-width: 200px; /* **Small, controlled size** */
-    margin: 0 auto 15px auto; /* Centers the image and adds space below it */
+    max-width: 170px;
+    margin: 0 auto 20px auto;
 }
 
 footer .hero-image img {
     width: 100%;
     height: auto;
-    border-radius: 5px; /* Keeps the professional look */
+    border-radius: 14px; /* Softens the square corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
 }
 
-/* 24. Footer Navigation Styling (Buttons) */
-
+/* 24. Footer Navigation Styling (Uniform Buttons) */
 .footer-nav {
-    display: flex; /* **Enables horizontal alignment** */
-    justify-content: center; /* **CRITICAL: Evenly spaces the buttons** */
-    margin-top: 15px; 
-    margin-bottom: 10px; /* Space above copyright */
-    max-width: 600px; /* Controls link group width */
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 15px auto 15px auto;
+    max-width: 650px;
 }
 
+.footer-nav a,
 .footer-nav .nav-button {
-    background-color: #00796b; /* Teal background */
+    background-color: #00796b;
     color: white;
-    padding: 8px 12px; /* Button padding */
+    padding: 10px 18px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 15px;
+    white-space: nowrap; /* Prevents "Contact & Booking" from wrapping onto 2 lines */
+    width: auto;
+    min-width: 130px;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     transition: background-color 0.3s;
-    margin: 0 5px; /* **Small space between buttons** */
-    width: 125px; /* Use a fixed width (adjust this number slightly if needed) */
-    text-align: center; /* Centers the shorter text (Home, Services) */
-    display: block; /* Ensures the fixed width is applied correctly */
+    margin: 0;
 }
 
+.footer-nav a:hover,
 .footer-nav .nav-button:hover {
     background-color: #004d40;
+    text-decoration: none;
 }
 
-/* 25. Sytling the Button Group in the header */
+/* 25. Styling the Button Group in the Header */
+.nav-button-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-button-group a,
 .nav-button-group a.nav-button { 
-    /* Targets any <a> tag that has the class .nav-button inside the .nav-button-group */
-    background-color: #00796b !important; /* Force background color */
+    background-color: #00796b !important;
     color: white !important;
-    padding: 8px 12px !important;
+    padding: 9px 16px !important;
     border-radius: 5px !important;
     text-decoration: none !important;
     font-weight: bold !important;
-    transition: background-color 0.3s;
+    font-size: 15px !important;
+    white-space: nowrap;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-left: 0 !important;
 }
 
+.nav-button-group a:hover,
 .nav-button-group a.nav-button:hover {
     background-color: #004d40 !important;
+}
+
+/* Clean outline indicator for whichever page is currently active */
+.nav-button-group a.active,
+.footer-nav a.active {
+    background-color: #004d40 !important;
+    border: 2px solid #80cbc4 !important;
 }
 
 /* 26. Styling for New Language Bar Container */

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact & Appointment Booking | Marting Healthcare Clinic</title>
+    <title>Contact & Appointment Booking | Martin Healthcare Clinic</title>
     <link rel="stylesheet" href="style.css"> </head>
 
 <body>
@@ -29,8 +29,8 @@
         <p>Use the information below to contact us or schedule your first visit.</p>
 
         <div class="action-buttons">
-            <a href="tel:551-273-9921" class="call-button">
-                Call Us Now:<br>(551) 273-9921
+            <a href="tel:702-307-6594" class="call-button">
+                Call Us Now:<br>(702) 307-6594
             </a>
 
             <button id="openModalBtn" class="submit-button">
@@ -56,7 +56,7 @@
 
             <div class="info-card">
                 <h3><strong>Office Hours for scheduling</strong></h3>
-                <p>You can reach Mr. Marting by phone during the following hours:</p>
+                <p>You can reach Mr. Martin by phone during the following hours:</p>
 
                 <ul class="hours list">
                     <li><strong>Monday-Wednesday:</strong> Anytime (24 hours)</li>
@@ -76,7 +76,7 @@
             <a href="services.html" class="nav-button">Services</a>
             <a href="contact.html" class="nav-button">Contact & Booking</a>
         </nav>    
-        <p>&copy; 2025 Martin Healthcare Clinic. All rights reserved.</p>
+        <p>&copy; 2026 Martin Healthcare Clinic. All rights reserved.</p>
     </footer>
 
     <div id="bookingModal" class="modal">
@@ -86,23 +86,40 @@
             <h2>Request Your In-Home Appointment</h2>
             <p>Please fill out the form below. We will call you to confirm your visit details.</p>
 
-            <form name="modal-request" method="POST" data-netlify="true">
-                <input type="checkbox" name="bot-field" style="display: none;">
-                
-                <label for="name">Full Name <span class="required-star">*</span></label>
-                <input type="text" name="name" required>
+            <form name="modal-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+    <input type="hidden" name="form-name" value="modal-request">
+    <div style="position: absolute; left: -9999px;" aria-hidden="true">
+        <label>Don’t fill this out if you’re human: <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+    </div>
+    
+    <label for="name">Full Name <span class="required-star">*</span></label>
+    <input 
+        type="text" 
+        name="name" 
+        pattern="[A-Za-z\s]+" 
+        title="Please use only letters and spaces."
+        required>
 
-                <label for="phone">Phone Number <span class="required-star">*</span></label>
-                <input type="tel" name="phone" required>
+    <label for="phone">Phone Number <span class="required-star">*</span></label>
+    <input 
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="7025550123"
+        pattern="[0-9]{10}"
+        maxlength="10"
+        required>
 
-                <label for="address">Full Address for Visit <span class="required-star">*</span></label>
-                <input type="text" name="address" required>
+    <label for="address">Full Address for Visit <span class="required-star">*</span></label>
+    <input type="text" name="address" required>
 
-                <label for="purpose">Brief Reason for Visit (Optional)</label>
-                <textarea name="purpose"></textarea>
+    <label for="purpose">Brief Reason for Visit (Optional)</label>
+    <textarea name="purpose" maxlength="500" placeholder="Describe your needs briefly..."></textarea>
 
-                <button type="submit" class="submit-button">Submit Appointment Request</button>
-            </form>
+    <div data-netlify-recaptcha="true"></div>
+
+    <button type="submit" class="submit-button">Submit Appointment Request</button>
+</form>
         </div>
     </div>
 
